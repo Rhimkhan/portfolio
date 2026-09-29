@@ -94,13 +94,15 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   pointer-events: none;
-  background-image: url(/images/Base_image_desktop.png);
+  background-image: url(/images/hero/base-desktop.jpg);
   transition: filter 0.4s ease;
 }
 
 [data-theme="dark"] .hero-portrait-base,
+html.dark .hero-portrait-base,
 body.dark-mode .hero-portrait-base {
-  filter: brightness(0.92) contrast(1.05);
+  background-image: url(/images/hero/base-dark-desktop.png);
+  filter: brightness(0.95) contrast(1.05);
 }
 
 /* Layer 2: Reveal Portrait with Radial Mask */
@@ -113,7 +115,7 @@ body.dark-mode .hero-portrait-base {
   background-repeat: no-repeat;
   background-size: cover;
   pointer-events: none;
-  background-image: url(/images/Reveal_image_desktop.png);
+  background-image: url(/images/hero/reveal-desktop.png);
   -webkit-mask-image: radial-gradient(
     circle var(--reveal-radius, 0px) at var(--reveal-x, -999px) var(--reveal-y, -999px),
     rgba(255, 255, 255, 0.94) 0%,
@@ -132,23 +134,53 @@ body.dark-mode .hero-portrait-base {
   );
 }
 
+[data-theme="dark"] .hero-portrait-reveal,
+html.dark .hero-portrait-reveal,
+body.dark-mode .hero-portrait-reveal {
+  background-image: url(/images/hero/reveal-dark-desktop.png);
+}
+
 /* Responsive Asset Switching */
 @media (max-width: 767px) {
   .hero-portrait-base {
-    background-image: url(/images/Base_image_mobile.png);
+    background-image: url(/images/hero/base-mobile.png);
   }
   .hero-portrait-reveal {
-    background-image: url(/images/Reveal_image_mobile.png);
+    background-image: url(/images/hero/reveal-mobile.png);
+  }
+
+  [data-theme="dark"] .hero-portrait-base,
+  html.dark .hero-portrait-base,
+  body.dark-mode .hero-portrait-base {
+    background-image: url(/images/hero/base-dark-mobile.png);
+  }
+
+  [data-theme="dark"] .hero-portrait-reveal,
+  html.dark .hero-portrait-reveal,
+  body.dark-mode .hero-portrait-reveal {
+    background-image: url(/images/hero/reveal-dark-mobile.png);
   }
 }
 
 /* Landscape orientation fallback for mobile */
 @media (max-width: 767px) and (orientation: landscape) {
   .hero-portrait-base {
-    background-image: url(/images/Base_image_desktop.png);
+    background-image: url(/images/hero/base-desktop.jpg);
   }
   .hero-portrait-reveal {
-    background-image: url(/images/Reveal_image_desktop.png);
+    background-image: url(/images/hero/reveal-desktop.png);
+  }
+
+  [data-theme="dark"] .hero-portrait-base,
+  html.dark .hero-portrait-base,
+  body.dark-mode .hero-portrait-base {
+    background-image: url(/images/hero/base-dark-desktop.png);
+  }
+
+  [data-theme="dark"] .hero-portrait-reveal,
+  html.dark .hero-portrait-reveal,
+  body.dark-mode .hero-portrait-reveal {
+    background-image: url(/images/hero/reveal-dark-desktop.png);
   }
 }
 
@@ -227,6 +259,8 @@ body.dark-mode .theme-btn .moon {
   background: var(--card-bg);
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 

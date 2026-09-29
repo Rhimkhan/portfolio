@@ -202,8 +202,20 @@ export default function GlassHero() {
     >
       {/* LAYER 1 & 2: Portrait Layers with Parallax */}
       <div ref={portraitLayersRef} className="absolute inset-0 w-full h-full pointer-events-none will-change-transform">
-        <div className="hero-portrait-base z-0" aria-hidden="true" />
-        <div className="hero-portrait-reveal z-[1]" aria-hidden="true" />
+        <div
+          className="hero-portrait-base z-0"
+          aria-hidden="true"
+          style={{
+            backgroundImage: `url(${isDarkMode ? "/images/hero/base-dark-desktop.png" : "/images/hero/base-desktop.jpg"})`,
+          }}
+        />
+        <div
+          className="hero-portrait-reveal z-[1]"
+          aria-hidden="true"
+          style={{
+            backgroundImage: `url(${isDarkMode ? "/images/hero/reveal-dark-desktop.png" : "/images/hero/reveal-desktop.png"})`,
+          }}
+        />
       </div>
 
       {/* LAYER 3: Technical Grid + Large Outlined Circle */}
