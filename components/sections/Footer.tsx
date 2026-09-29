@@ -16,7 +16,14 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="w-full bg-[#050a14] text-slate-300 border-t border-[rgba(0,255,224,0.15)] relative overflow-hidden">
+    <footer
+      className="w-full relative overflow-hidden transition-colors duration-300"
+      style={{
+        background: "var(--card-bg)",
+        color: "var(--text-secondary)",
+        borderTop: "1px solid var(--border)",
+      }}
+    >
       <div
         className="max-w-7xl mx-auto py-20"
         style={{
@@ -27,36 +34,54 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
           {/* Left section: Brand & Philosophy */}
           <div className="md:col-span-5 flex flex-col gap-4">
-            <h2 className="font-display text-3xl font-extrabold tracking-tight text-white">
-              R HIM KHAN <span className="text-[#00ffe0]">.</span>
+            <h2
+              className="font-display text-3xl font-extrabold tracking-tight"
+              style={{ color: "var(--text-primary)" }}
+            >
+              R HIM KHAN <span style={{ color: "var(--accent)" }}>.</span>
             </h2>
-            <p className="font-mono-technical text-xs uppercase tracking-wider text-[#00ffe0] font-semibold">
+            <p
+              className="font-mono-technical text-xs uppercase tracking-wider font-semibold"
+              style={{ color: "var(--accent)" }}
+            >
               {personalInfo.role}
             </p>
-            <p className="text-sm text-slate-400 italic font-normal leading-relaxed max-w-sm">
+            <p
+              className="text-sm italic font-normal leading-relaxed max-w-sm"
+              style={{ color: "var(--text-secondary)" }}
+            >
               &ldquo;{personalInfo.tagline}&rdquo;
             </p>
 
             {/* Philosophy Tags */}
-            <div className="flex flex-wrap gap-2 pt-2 text-[11px] font-mono-technical text-slate-400">
-              <span className="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-slate-300">
-                &lt;&gt; CODE
-              </span>
-              <span className="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-slate-300">
-                🎓 LEARN
-              </span>
-              <span className="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-slate-300">
-                🚀 BUILD
-              </span>
-              <span className="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-slate-300">
-                🔁 REPEAT
-              </span>
+            <div className="flex flex-wrap gap-2 pt-2 text-[11px] font-mono-technical">
+              {[
+                { label: "<> CODE" },
+                { label: "🎓 LEARN" },
+                { label: "🚀 BUILD" },
+                { label: "🔁 REPEAT" },
+              ].map((badge) => (
+                <span
+                  key={badge.label}
+                  className="px-2.5 py-1 rounded transition-colors"
+                  style={{
+                    background: "var(--bg)",
+                    border: "1px solid var(--border)",
+                    color: "var(--text-secondary)",
+                  }}
+                >
+                  {badge.label}
+                </span>
+              ))}
             </div>
           </div>
 
           {/* Center section: Navigation links */}
           <div className="md:col-span-4">
-            <h3 className="font-mono-technical text-xs uppercase tracking-widest text-[#00ffe0] font-semibold mb-5">
+            <h3
+              className="font-mono-technical text-xs uppercase tracking-widest font-semibold mb-5"
+              style={{ color: "var(--accent)" }}
+            >
               EXPLORE INDEX
             </h3>
             <div className="grid grid-cols-2 gap-2.5">
@@ -64,9 +89,13 @@ export default function Footer() {
                 <a
                   key={link.label}
                   href={link.href}
-                  className="text-xs font-mono-technical text-slate-400 hover:text-white flex items-center gap-1.5 transition-colors group"
+                  className="text-xs font-mono-technical flex items-center gap-1.5 transition-colors group"
+                  style={{ color: "var(--text-secondary)" }}
                 >
-                  <span className="text-[#00ffe0] opacity-0 group-hover:opacity-100 transition-opacity">
+                  <span
+                    className="opacity-0 group-hover:opacity-100 transition-opacity"
+                    style={{ color: "var(--accent)" }}
+                  >
                     →
                   </span>
                   <span>{link.label}</span>
@@ -77,10 +106,16 @@ export default function Footer() {
 
           {/* Right section: Socials & Mission */}
           <div className="md:col-span-3 flex flex-col gap-4">
-            <h3 className="font-mono-technical text-xs uppercase tracking-widest text-[#00ffe0] font-semibold">
+            <h3
+              className="font-mono-technical text-xs uppercase tracking-widest font-semibold"
+              style={{ color: "var(--accent)" }}
+            >
               STAY IN TOUCH
             </h3>
-            <p className="text-xs text-slate-400 leading-relaxed font-normal">
+            <p
+              className="text-xs leading-relaxed font-normal"
+              style={{ color: "var(--text-secondary)" }}
+            >
               Feel free to connect for software development, research discussions, or engineering roles.
             </p>
 
@@ -90,7 +125,12 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
-                className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-[#00ffe0] hover:border-[#00ffe0] transition-colors"
+                className="w-10 h-10 rounded-xl flex items-center justify-center transition-colors hover:scale-105"
+                style={{
+                  background: "var(--bg)",
+                  border: "1px solid var(--border)",
+                  color: "var(--text-secondary)",
+                }}
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path
@@ -106,7 +146,12 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-[#00ffe0] hover:border-[#00ffe0] transition-colors"
+                className="w-10 h-10 rounded-xl flex items-center justify-center transition-colors hover:scale-105"
+                style={{
+                  background: "var(--bg)",
+                  border: "1px solid var(--border)",
+                  color: "var(--text-secondary)",
+                }}
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
@@ -116,7 +161,12 @@ export default function Footer() {
               <a
                 href={`mailto:${personalInfo.email}`}
                 aria-label="Email"
-                className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-[#00ffe0] hover:border-[#00ffe0] transition-colors"
+                className="w-10 h-10 rounded-xl flex items-center justify-center transition-colors hover:scale-105"
+                style={{
+                  background: "var(--bg)",
+                  border: "1px solid var(--border)",
+                  color: "var(--text-secondary)",
+                }}
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
@@ -129,14 +179,23 @@ export default function Footer() {
               </a>
             </div>
 
-            <span className="font-mono-technical text-[10px] uppercase tracking-wider text-slate-500 mt-2 block">
+            <span
+              className="font-mono-technical text-[10px] uppercase tracking-wider mt-2 block"
+              style={{ color: "var(--text-secondary)" }}
+            >
               BUILDING A BETTER TOMORROW WITH CODE
             </span>
           </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono-technical text-slate-500">
+        <div
+          className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono-technical"
+          style={{
+            borderTop: "1px solid var(--border)",
+            color: "var(--text-secondary)",
+          }}
+        >
           <p>© 2026 R Him Khan. All rights reserved.</p>
           <p>Built with Next.js + Tailwind | Made in India 🇮🇳</p>
         </div>

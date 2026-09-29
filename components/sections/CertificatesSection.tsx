@@ -25,6 +25,7 @@ export default function CertificatesSection() {
       id="certificates"
       className="w-full py-28 border-t border-[var(--border)] relative"
       style={{
+        background: "var(--bg)",
         paddingLeft: "max(5.6vw, 1.5rem)",
         paddingRight: "max(5.6vw, 1.5rem)",
       }}
@@ -33,20 +34,45 @@ export default function CertificatesSection() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 scroll-animate">
           <div>
-            <span className="font-mono-technical text-xs uppercase tracking-widest text-[var(--accent)] font-semibold inline-block mb-3 px-3 py-1 rounded-full border border-[var(--border)] bg-[var(--card-bg)]">
+            <span
+              className="font-mono-technical text-xs uppercase tracking-widest font-semibold inline-block mb-3 px-3 py-1 rounded-full border"
+              style={{
+                color: "var(--accent)",
+                background: "var(--card-bg)",
+                borderColor: "var(--border)",
+              }}
+            >
               CREDENTIALS &amp; RECOGNITION
             </span>
-            <h2 className="font-display text-3xl sm:text-5xl font-semibold tracking-tight text-[var(--text-primary)]">
+            <h2
+              className="font-display text-3xl sm:text-5xl font-semibold tracking-tight"
+              style={{ color: "var(--text-primary)" }}
+            >
               My Certificates &amp; Badges
             </h2>
           </div>
 
           {/* Stats Bar */}
-          <div className="flex flex-wrap items-center gap-3 sm:gap-4 mt-4 md:mt-0 font-mono-technical text-xs sm:text-sm text-[var(--text-secondary)]">
-            <span className="px-3 py-1.5 rounded-xl border border-[var(--border)] bg-[var(--card-bg)]">
+          <div
+            className="flex flex-wrap items-center gap-3 sm:gap-4 mt-4 md:mt-0 font-mono-technical text-xs sm:text-sm"
+            style={{ color: "var(--text-secondary)" }}
+          >
+            <span
+              className="px-3 py-1.5 rounded-xl border"
+              style={{
+                background: "var(--card-bg)",
+                borderColor: "var(--border)",
+              }}
+            >
               🎖️ 4 Certificates
             </span>
-            <span className="px-3 py-1.5 rounded-xl border border-[var(--border)] bg-[var(--card-bg)]">
+            <span
+              className="px-3 py-1.5 rounded-xl border"
+              style={{
+                background: "var(--card-bg)",
+                borderColor: "var(--border)",
+              }}
+            >
               🏛️ 3 Issuers
             </span>
             <span className="px-3 py-1.5 rounded-xl border border-emerald-500/30 bg-emerald-500/10 text-emerald-500 font-semibold">
@@ -61,11 +87,21 @@ export default function CertificatesSection() {
             <button
               key={tab}
               onClick={() => setSelectedFilter(tab)}
-              className={`font-mono-technical text-xs uppercase tracking-wider font-semibold px-4 py-2 rounded-full border transition-all ${
+              className="font-mono-technical text-xs uppercase tracking-wider font-semibold px-4 py-2 rounded-full border transition-all"
+              style={
                 selectedFilter === tab
-                  ? "bg-[var(--accent)] border-[var(--accent)] text-white shadow-md scale-105"
-                  : "border-[var(--border)] bg-[var(--card-bg)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[var(--accent)]"
-              }`}
+                  ? {
+                      background: "var(--accent)",
+                      borderColor: "var(--accent)",
+                      color: "#ffffff",
+                      boxShadow: "var(--shadow)",
+                    }
+                  : {
+                      background: "var(--card-bg)",
+                      borderColor: "var(--border)",
+                      color: "var(--text-secondary)",
+                    }
+              }
             >
               {tab}
             </button>
@@ -79,8 +115,11 @@ export default function CertificatesSection() {
               key={idx}
               className="portfolio-card rounded-2xl p-7 flex flex-col justify-between relative overflow-hidden group scroll-animate"
               style={{
+                background: "var(--card-bg)",
+                border: "1px solid var(--border)",
                 borderTopWidth: "4px",
                 borderTopColor: cert.accentColor,
+                boxShadow: "var(--shadow)",
               }}
             >
               <div>
@@ -105,7 +144,10 @@ export default function CertificatesSection() {
                 </div>
 
                 {/* Certificate Name */}
-                <h3 className="font-display text-xl font-bold text-[var(--text-primary)] leading-snug mb-2 group-hover:text-[var(--accent)] transition-colors">
+                <h3
+                  className="font-display text-xl font-bold leading-snug mb-2 transition-colors"
+                  style={{ color: "var(--text-primary)" }}
+                >
                   {cert.name}
                 </h3>
 
@@ -118,7 +160,10 @@ export default function CertificatesSection() {
                 </span>
 
                 {/* Date & Hours */}
-                <div className="flex flex-wrap items-center gap-2 text-xs font-mono-technical text-[var(--text-secondary)] mb-4">
+                <div
+                  className="flex flex-wrap items-center gap-2 text-xs font-mono-technical mb-4"
+                  style={{ color: "var(--text-secondary)" }}
+                >
                   <span>📅 {cert.date}</span>
                   {cert.hours && <span>• ⏱ {cert.hours}</span>}
                   {cert.topic && <span>• 💡 {cert.topic}</span>}
@@ -126,17 +171,28 @@ export default function CertificatesSection() {
 
                 {/* Credential ID */}
                 {cert.credentialId && (
-                  <p className="font-mono-technical text-[11px] text-[var(--text-secondary)]/80 mb-6 truncate">
+                  <p
+                    className="font-mono-technical text-[11px] mb-6 truncate"
+                    style={{ color: "var(--text-secondary)" }}
+                  >
                     ID: {cert.credentialId}
                   </p>
                 )}
               </div>
 
               {/* View Certificate Button */}
-              <div className="pt-4 border-t border-[var(--border)]">
+              <div
+                className="pt-4 border-t"
+                style={{ borderColor: "var(--border)" }}
+              >
                 <button
                   onClick={() => handleOpenPdf(cert.pdf)}
-                  className="w-full inline-flex items-center justify-center gap-2 py-2.5 rounded-xl border border-[var(--border)] bg-[var(--bg)] text-xs font-mono-technical font-semibold text-[var(--text-primary)] hover:border-[var(--accent)] hover:text-[var(--accent)] shadow-sm hover:scale-[1.02] active:scale-[0.98] transition-all"
+                  className="w-full inline-flex items-center justify-center gap-2 py-2.5 rounded-xl border text-xs font-mono-technical font-semibold shadow-sm hover:scale-[1.02] active:scale-[0.98] transition-all"
+                  style={{
+                    background: "var(--bg)",
+                    borderColor: "var(--border)",
+                    color: "var(--text-primary)",
+                  }}
                 >
                   <span>📄 View Certificate</span>
                   <span className="text-[10px]">↗</span>

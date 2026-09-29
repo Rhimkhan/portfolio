@@ -9,6 +9,7 @@ export default function AboutSection() {
       id="about"
       className="w-full py-28 border-t border-[var(--border)] relative overflow-hidden"
       style={{
+        background: "var(--bg)",
         paddingLeft: "max(5.6vw, 1.5rem)",
         paddingRight: "max(5.6vw, 1.5rem)",
       }}
@@ -41,6 +42,11 @@ export default function AboutSection() {
                 <span
                   key={idx}
                   className="font-mono-technical text-xs font-semibold px-3.5 py-1.5 rounded-full border border-[var(--border)] bg-[var(--card-bg)] text-[var(--text-primary)] shadow-sm"
+                  style={{
+                    background: "var(--card-bg)",
+                    border: "1px solid var(--border)",
+                    color: "var(--text-primary)",
+                  }}
                 >
                   ✦ {badge}
                 </span>
@@ -84,7 +90,14 @@ export default function AboutSection() {
                   {/* Timeline dot */}
                   <div className="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full border-2 border-[var(--accent)] bg-[var(--bg)] group-hover:scale-125 transition-transform" />
 
-                  <div className="portfolio-card p-5 rounded-xl">
+                  <div
+                    className="portfolio-card p-5 rounded-xl"
+                    style={{
+                      background: "var(--card-bg)",
+                      border: "1px solid var(--border)",
+                      boxShadow: "var(--shadow)",
+                    }}
+                  >
                     <div className="flex items-start justify-between gap-2">
                       <h4 className="font-display font-semibold text-base text-[var(--text-primary)]">
                         {edu.degree}
@@ -124,6 +137,11 @@ export default function AboutSection() {
             <div
               key={idx}
               className="portfolio-card p-6 rounded-2xl text-center group hover:scale-[1.02]"
+              style={{
+                background: "var(--card-bg)",
+                border: "1px solid var(--border)",
+                boxShadow: "var(--shadow)",
+              }}
             >
               <div className="font-display text-3xl sm:text-5xl font-bold text-[var(--accent)] tracking-tight">
                 {stat.value}

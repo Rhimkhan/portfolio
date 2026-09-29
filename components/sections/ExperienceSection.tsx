@@ -13,6 +13,7 @@ export default function ExperienceSection() {
       id="experience"
       className="w-full py-28 border-t border-[var(--border)] relative"
       style={{
+        background: "var(--bg)",
         paddingLeft: "max(5.6vw, 1.5rem)",
         paddingRight: "max(5.6vw, 1.5rem)",
       }}
@@ -20,19 +21,35 @@ export default function ExperienceSection() {
       <div className="max-w-5xl mx-auto">
         {/* Section Header */}
         <div className="mb-16 scroll-animate">
-          <span className="font-mono-technical text-xs uppercase tracking-widest text-[var(--accent)] font-semibold inline-block mb-3 px-3 py-1 rounded-full border border-[var(--border)] bg-[var(--card-bg)]">
+          <span
+            className="font-mono-technical text-xs uppercase tracking-widest font-semibold inline-block mb-3 px-3 py-1 rounded-full border"
+            style={{
+              color: "var(--accent)",
+              background: "var(--card-bg)",
+              borderColor: "var(--border)",
+            }}
+          >
             CAREER &amp; INTERNSHIPS
           </span>
-          <h2 className="font-display text-3xl sm:text-5xl font-semibold tracking-tight text-[var(--text-primary)]">
+          <h2
+            className="font-display text-3xl sm:text-5xl font-semibold tracking-tight"
+            style={{ color: "var(--text-primary)" }}
+          >
             Work Experience
           </h2>
-          <p className="font-display text-sm sm:text-base text-[var(--text-secondary)] mt-2 font-normal">
+          <p
+            className="font-display text-sm sm:text-base mt-2 font-normal"
+            style={{ color: "var(--text-secondary)" }}
+          >
             Click on any card or document button to view credentials &amp; offer letters
           </p>
         </div>
 
         {/* Vertical Timeline */}
-        <div className="relative pl-6 sm:pl-10 border-l-2 border-[var(--border)] space-y-12">
+        <div
+          className="relative pl-6 sm:pl-10 border-l-2 space-y-12"
+          style={{ borderColor: "var(--border)" }}
+        >
           {experienceData.map((exp, idx) => (
             <div key={idx} className="relative group scroll-animate">
               {/* Timeline Initial Circle Badge */}
@@ -47,12 +64,22 @@ export default function ExperienceSection() {
               </div>
 
               {/* Experience Card */}
-              <div className="portfolio-card rounded-2xl p-6 sm:p-8">
+              <div
+                className="portfolio-card rounded-2xl p-6 sm:p-8"
+                style={{
+                  background: "var(--card-bg)",
+                  border: "1px solid var(--border)",
+                  boxShadow: "var(--shadow)",
+                }}
+              >
                 {/* Header row */}
                 <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
                   <div>
                     <div className="flex flex-wrap items-center gap-2 mb-1">
-                      <h3 className="font-display text-xl sm:text-2xl font-bold text-[var(--text-primary)]">
+                      <h3
+                        className="font-display text-xl sm:text-2xl font-bold"
+                        style={{ color: "var(--text-primary)" }}
+                      >
                         {exp.role}
                       </h3>
                       {exp.badge && (
@@ -61,30 +88,53 @@ export default function ExperienceSection() {
                         </span>
                       )}
                     </div>
-                    <span className="font-display text-base font-semibold text-[var(--accent)] block">
+                    <span
+                      className="font-display text-base font-semibold block"
+                      style={{ color: "var(--accent)" }}
+                    >
                       {exp.company}
                     </span>
                   </div>
 
                   <div className="flex flex-wrap items-center gap-2">
-                    <span className="font-mono-technical text-xs font-semibold px-3 py-1 rounded-full bg-[var(--bg)] border border-[var(--border)] text-[var(--text-secondary)]">
+                    <span
+                      className="font-mono-technical text-xs font-semibold px-3 py-1 rounded-full border"
+                      style={{
+                        background: "var(--bg)",
+                        borderColor: "var(--border)",
+                        color: "var(--text-secondary)",
+                      }}
+                    >
                       📅 {exp.period}
                     </span>
-                    <span className="font-mono-technical text-xs font-semibold px-3 py-1 rounded-full bg-[var(--bg)] border border-[var(--border)] text-[var(--text-secondary)]">
+                    <span
+                      className="font-mono-technical text-xs font-semibold px-3 py-1 rounded-full border"
+                      style={{
+                        background: "var(--bg)",
+                        borderColor: "var(--border)",
+                        color: "var(--text-secondary)",
+                      }}
+                    >
                       📍 {exp.location}
                     </span>
                   </div>
                 </div>
 
                 {/* Sub-meta (Duration & Intern ID) */}
-                <div className="flex flex-wrap items-center gap-4 text-xs font-mono-technical text-[var(--text-secondary)] mb-4">
+                <div
+                  className="flex flex-wrap items-center gap-4 text-xs font-mono-technical mb-4"
+                  style={{ color: "var(--text-secondary)" }}
+                >
                   <span>⏱ Duration: {exp.duration}</span>
                   {exp.internId && <span>• Intern ID: {exp.internId}</span>}
                   <span className="text-emerald-500 font-semibold">• {exp.status}</span>
                 </div>
 
                 {/* Work Description */}
-                <p className="text-sm sm:text-base text-[var(--text-secondary)] leading-relaxed mb-6 font-normal">
+                <p
+                  className="text-sm sm:text-base leading-relaxed mb-6 font-normal"
+                  style={{ color: "var(--text-secondary)" }}
+                >
                   {exp.work}
                 </p>
 
@@ -93,7 +143,12 @@ export default function ExperienceSection() {
                   {exp.skills.map((skill, sIdx) => (
                     <span
                       key={sIdx}
-                      className="font-mono-technical text-xs px-2.5 py-1 rounded-md bg-[var(--bg)] border border-[var(--border)] text-[var(--text-primary)] font-medium"
+                      className="font-mono-technical text-xs px-2.5 py-1 rounded-md border font-medium"
+                      style={{
+                        background: "var(--bg)",
+                        borderColor: "var(--border)",
+                        color: "var(--text-primary)",
+                      }}
                     >
                       {skill}
                     </span>
@@ -102,12 +157,20 @@ export default function ExperienceSection() {
 
                 {/* Document buttons */}
                 {exp.documents.length > 0 && (
-                  <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-[var(--border)]">
+                  <div
+                    className="flex flex-wrap items-center gap-3 pt-4 border-t"
+                    style={{ borderColor: "var(--border)" }}
+                  >
                     {exp.documents.map((doc, dIdx) => (
                       <button
                         key={dIdx}
                         onClick={() => handleOpenPdf(doc.url)}
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-[var(--border)] bg-[var(--bg)] text-xs font-mono-technical font-semibold text-[var(--text-primary)] hover:border-[var(--accent)] hover:text-[var(--accent)] shadow-sm hover:scale-[1.02] active:scale-[0.98] transition-all"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border text-xs font-mono-technical font-semibold shadow-sm hover:scale-[1.02] active:scale-[0.98] transition-all"
+                        style={{
+                          background: "var(--bg)",
+                          borderColor: "var(--border)",
+                          color: "var(--text-primary)",
+                        }}
                       >
                         <span>{doc.label}</span>
                         <span className="text-[10px]">↗</span>

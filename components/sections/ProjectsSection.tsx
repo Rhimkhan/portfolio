@@ -9,6 +9,7 @@ export default function ProjectsSection() {
       id="projects"
       className="w-full py-28 border-t border-[var(--border)] relative"
       style={{
+        background: "var(--bg)",
         paddingLeft: "max(5.6vw, 1.5rem)",
         paddingRight: "max(5.6vw, 1.5rem)",
       }}
@@ -17,14 +18,27 @@ export default function ProjectsSection() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 scroll-animate">
           <div>
-            <span className="font-mono-technical text-xs uppercase tracking-widest text-[var(--accent)] font-semibold inline-block mb-3 px-3 py-1 rounded-full border border-[var(--border)] bg-[var(--card-bg)]">
+            <span
+              className="font-mono-technical text-xs uppercase tracking-widest font-semibold inline-block mb-3 px-3 py-1 rounded-full border"
+              style={{
+                color: "var(--accent)",
+                background: "var(--card-bg)",
+                borderColor: "var(--border)",
+              }}
+            >
               PORTFOLIO SHOWCASE
             </span>
-            <h2 className="font-display text-3xl sm:text-5xl font-semibold tracking-tight text-[var(--text-primary)]">
+            <h2
+              className="font-display text-3xl sm:text-5xl font-semibold tracking-tight"
+              style={{ color: "var(--text-primary)" }}
+            >
               Featured Projects
             </h2>
           </div>
-          <p className="font-display text-sm sm:text-base text-[var(--text-secondary)] max-w-md mt-4 md:mt-0 font-normal">
+          <p
+            className="font-display text-sm sm:text-base max-w-md mt-4 md:mt-0 font-normal"
+            style={{ color: "var(--text-secondary)" }}
+          >
             Production-grade architectures, computer vision pipelines, and full-stack web applications.
           </p>
         </div>
@@ -37,12 +51,17 @@ export default function ProjectsSection() {
               className={`portfolio-card rounded-2xl p-7 flex flex-col justify-between scroll-animate delay-${
                 ((idx % 3) + 1) * 100
               }`}
+              style={{
+                background: "var(--card-bg)",
+                border: "1px solid var(--border)",
+                boxShadow: "var(--shadow)",
+              }}
             >
               <div>
                 {/* Category Tag */}
                 <div className="flex items-center justify-between gap-2 mb-4">
                   <span
-                    className="font-mono-technical text-xs font-semibold px-3 py-1 rounded-full border border-[var(--border)] uppercase tracking-wider"
+                    className="font-mono-technical text-xs font-semibold px-3 py-1 rounded-full border uppercase tracking-wider"
                     style={{
                       backgroundColor: `${project.tagColor}15`,
                       color: project.tagColor || "var(--accent)",
@@ -51,18 +70,27 @@ export default function ProjectsSection() {
                   >
                     ● {project.tag}
                   </span>
-                  <span className="font-mono-technical text-xs text-[var(--text-secondary)]">
+                  <span
+                    className="font-mono-technical text-xs"
+                    style={{ color: "var(--text-secondary)" }}
+                  >
                     0{idx + 1}
                   </span>
                 </div>
 
                 {/* Project Title */}
-                <h3 className="font-display text-2xl font-bold tracking-tight text-[var(--text-primary)] mb-3 group-hover:text-[var(--accent)] transition-colors">
+                <h3
+                  className="font-display text-2xl font-bold tracking-tight mb-3 transition-colors"
+                  style={{ color: "var(--text-primary)" }}
+                >
                   {project.name}
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm text-[var(--text-secondary)] leading-relaxed mb-6 font-normal">
+                <p
+                  className="text-sm leading-relaxed mb-6 font-normal"
+                  style={{ color: "var(--text-secondary)" }}
+                >
                   {project.description}
                 </p>
 
@@ -71,7 +99,12 @@ export default function ProjectsSection() {
                   {project.tech.map((tech, tIdx) => (
                     <span
                       key={tIdx}
-                      className="font-mono-technical text-[11px] px-2.5 py-1 rounded-md bg-[var(--bg)] border border-[var(--border)] text-[var(--text-secondary)] font-medium"
+                      className="font-mono-technical text-[11px] px-2.5 py-1 rounded-md border font-medium"
+                      style={{
+                        background: "var(--bg)",
+                        borderColor: "var(--border)",
+                        color: "var(--text-secondary)",
+                      }}
                     >
                       {tech}
                     </span>
@@ -80,13 +113,21 @@ export default function ProjectsSection() {
               </div>
 
               {/* Action Buttons */}
-              <div className="flex items-center gap-3 pt-4 border-t border-[var(--border)]">
+              <div
+                className="flex items-center gap-3 pt-4 border-t"
+                style={{ borderColor: "var(--border)" }}
+              >
                 {/* GitHub Link */}
                 <a
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-[var(--border)] bg-[var(--card-bg)] text-xs font-mono-technical font-semibold text-[var(--text-primary)] hover:border-[var(--accent)] hover:text-[var(--accent)] hover:bg-[var(--bg)] transition-all shadow-sm"
+                  className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border text-xs font-mono-technical font-semibold transition-all shadow-sm"
+                  style={{
+                    background: "var(--card-bg)",
+                    borderColor: "var(--border)",
+                    color: "var(--text-primary)",
+                  }}
                 >
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                     <path
@@ -104,7 +145,10 @@ export default function ProjectsSection() {
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl bg-[var(--accent)] text-white text-xs font-mono-technical font-semibold hover:opacity-90 transition-all shadow-sm"
+                    className="flex-1 inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl text-xs font-mono-technical font-semibold hover:opacity-90 transition-all shadow-sm text-white"
+                    style={{
+                      background: "var(--accent)",
+                    }}
                   >
                     <span>Live Demo ↗</span>
                   </a>
@@ -112,11 +156,23 @@ export default function ProjectsSection() {
                   <div className="relative group/tip flex-1">
                     <button
                       disabled
-                      className="w-full inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl border border-[var(--border)] bg-[var(--bg)] text-xs font-mono-technical font-semibold text-[var(--text-secondary)] opacity-50 cursor-not-allowed"
+                      className="w-full inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl border text-xs font-mono-technical font-semibold opacity-50 cursor-not-allowed"
+                      style={{
+                        background: "var(--bg)",
+                        borderColor: "var(--border)",
+                        color: "var(--text-secondary)",
+                      }}
                     >
                       <span>Live Demo</span>
                     </button>
-                    <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover/tip:block bg-black text-white text-[11px] font-mono-technical px-2.5 py-1 rounded shadow-lg whitespace-nowrap z-10 pointer-events-none">
+                    <div
+                      className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover/tip:block text-[11px] font-mono-technical px-2.5 py-1 rounded shadow-lg whitespace-nowrap z-10 pointer-events-none"
+                      style={{
+                        background: "var(--card-bg)",
+                        color: "var(--text-primary)",
+                        border: "1px solid var(--border)",
+                      }}
+                    >
                       Coming Soon
                     </div>
                   </div>

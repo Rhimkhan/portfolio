@@ -62,6 +62,7 @@ export default function ContactSection() {
       id="contact"
       className="w-full py-28 border-t border-[var(--border)] relative"
       style={{
+        background: "var(--bg)",
         paddingLeft: "max(5.6vw, 1.5rem)",
         paddingRight: "max(5.6vw, 1.5rem)",
       }}
@@ -69,13 +70,26 @@ export default function ContactSection() {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="mb-16 scroll-animate">
-          <span className="font-mono-technical text-xs uppercase tracking-widest text-[var(--accent)] font-semibold inline-block mb-3 px-3 py-1 rounded-full border border-[var(--border)] bg-[var(--card-bg)]">
+          <span
+            className="font-mono-technical text-xs uppercase tracking-widest font-semibold inline-block mb-3 px-3 py-1 rounded-full border"
+            style={{
+              color: "var(--accent)",
+              background: "var(--card-bg)",
+              borderColor: "var(--border)",
+            }}
+          >
             • AVAILABLE FOR OPPORTUNITIES
           </span>
-          <h2 className="font-display text-3xl sm:text-5xl font-semibold tracking-tight text-[var(--text-primary)]">
+          <h2
+            className="font-display text-3xl sm:text-5xl font-semibold tracking-tight"
+            style={{ color: "var(--text-primary)" }}
+          >
             Let&apos;s Build Something Extraordinary
           </h2>
-          <p className="font-display text-sm sm:text-base text-[var(--text-secondary)] mt-2 font-normal">
+          <p
+            className="font-display text-sm sm:text-base mt-2 font-normal"
+            style={{ color: "var(--text-secondary)" }}
+          >
             Have a project in mind, an internship opening, or just want to connect? Reach out below.
           </p>
         </div>
@@ -85,44 +99,90 @@ export default function ContactSection() {
           {/* Left Column: Info Cards & Availability */}
           <div className="lg:col-span-5 flex flex-col gap-6 scroll-animate">
             {/* Open to Collaborate Card */}
-            <div className="portfolio-card rounded-2xl p-6 sm:p-7">
+            <div
+              className="portfolio-card rounded-2xl p-6 sm:p-7"
+              style={{
+                background: "var(--card-bg)",
+                border: "1px solid var(--border)",
+                boxShadow: "var(--shadow)",
+              }}
+            >
               <div className="flex items-center gap-3 mb-4">
                 <span className="relative flex h-3 w-3">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                   <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500" />
                 </span>
-                <h3 className="font-display font-bold text-lg text-[var(--text-primary)]">
+                <h3
+                  className="font-display font-bold text-lg"
+                  style={{ color: "var(--text-primary)" }}
+                >
                   Open to Collaborate
                 </h3>
               </div>
 
-              <p className="text-sm text-[var(--text-secondary)] leading-relaxed mb-6 font-normal">
+              <p
+                className="text-sm leading-relaxed mb-6 font-normal"
+                style={{ color: "var(--text-secondary)" }}
+              >
                 Currently open to internship opportunities, research collaborations, and full-stack/AI engineering roles.
               </p>
 
               {/* Stats badges */}
               <div className="grid grid-cols-3 gap-2.5 text-center">
-                <div className="p-3 rounded-xl bg-[var(--bg)] border border-[var(--border)]">
-                  <span className="font-display font-bold text-base sm:text-lg text-[var(--accent)] block">
+                <div
+                  className="p-3 rounded-xl border"
+                  style={{
+                    background: "var(--bg)",
+                    borderColor: "var(--border)",
+                  }}
+                >
+                  <span
+                    className="font-display font-bold text-base sm:text-lg block"
+                    style={{ color: "var(--accent)" }}
+                  >
                     &lt; 24h
                   </span>
-                  <span className="font-mono-technical text-[10px] uppercase text-[var(--text-secondary)]">
+                  <span
+                    className="font-mono-technical text-[10px] uppercase"
+                    style={{ color: "var(--text-secondary)" }}
+                  >
                     Response
                   </span>
                 </div>
-                <div className="p-3 rounded-xl bg-[var(--bg)] border border-[var(--border)]">
-                  <span className="font-display font-bold text-base sm:text-lg text-[var(--accent)] block">
+                <div
+                  className="p-3 rounded-xl border"
+                  style={{
+                    background: "var(--bg)",
+                    borderColor: "var(--border)",
+                  }}
+                >
+                  <span
+                    className="font-display font-bold text-base sm:text-lg block"
+                    style={{ color: "var(--accent)" }}
+                  >
                     100%
                   </span>
-                  <span className="font-mono-technical text-[10px] uppercase text-[var(--text-secondary)]">
+                  <span
+                    className="font-mono-technical text-[10px] uppercase"
+                    style={{ color: "var(--text-secondary)" }}
+                  >
                     Replies
                   </span>
                 </div>
-                <div className="p-3 rounded-xl bg-[var(--bg)] border border-[var(--border)]">
+                <div
+                  className="p-3 rounded-xl border"
+                  style={{
+                    background: "var(--bg)",
+                    borderColor: "var(--border)",
+                  }}
+                >
                   <span className="font-display font-bold text-base sm:text-lg text-emerald-500 block">
                     Active
                   </span>
-                  <span className="font-mono-technical text-[10px] uppercase text-[var(--text-secondary)]">
+                  <span
+                    className="font-mono-technical text-[10px] uppercase"
+                    style={{ color: "var(--text-secondary)" }}
+                  >
                     Open to Work
                   </span>
                 </div>
@@ -133,16 +193,33 @@ export default function ContactSection() {
             <div className="space-y-3">
               <a
                 href={`mailto:${personalInfo.email}`}
-                className="portfolio-card rounded-xl p-4 flex items-center gap-4 hover:border-[var(--accent)] transition-all group"
+                className="portfolio-card rounded-xl p-4 flex items-center gap-4 transition-all group"
+                style={{
+                  background: "var(--card-bg)",
+                  border: "1px solid var(--border)",
+                  boxShadow: "var(--shadow)",
+                }}
               >
-                <div className="w-10 h-10 rounded-lg bg-[var(--bg)] border border-[var(--border)] flex items-center justify-center text-lg shrink-0 group-hover:scale-110 transition-transform">
+                <div
+                  className="w-10 h-10 rounded-lg border flex items-center justify-center text-lg shrink-0 group-hover:scale-110 transition-transform"
+                  style={{
+                    background: "var(--bg)",
+                    borderColor: "var(--border)",
+                  }}
+                >
                   ✉️
                 </div>
                 <div className="min-w-0">
-                  <span className="font-mono-technical text-[11px] uppercase tracking-wider text-[var(--text-secondary)] block">
+                  <span
+                    className="font-mono-technical text-[11px] uppercase tracking-wider block"
+                    style={{ color: "var(--text-secondary)" }}
+                  >
                     Email Address
                   </span>
-                  <span className="text-sm font-semibold text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors truncate block">
+                  <span
+                    className="text-sm font-semibold truncate block"
+                    style={{ color: "var(--text-primary)" }}
+                  >
                     {personalInfo.email}
                   </span>
                 </div>
@@ -152,16 +229,33 @@ export default function ContactSection() {
                 href={personalInfo.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="portfolio-card rounded-xl p-4 flex items-center gap-4 hover:border-[var(--accent)] transition-all group"
+                className="portfolio-card rounded-xl p-4 flex items-center gap-4 transition-all group"
+                style={{
+                  background: "var(--card-bg)",
+                  border: "1px solid var(--border)",
+                  boxShadow: "var(--shadow)",
+                }}
               >
-                <div className="w-10 h-10 rounded-lg bg-[var(--bg)] border border-[var(--border)] flex items-center justify-center text-lg shrink-0 group-hover:scale-110 transition-transform">
+                <div
+                  className="w-10 h-10 rounded-lg border flex items-center justify-center text-lg shrink-0 group-hover:scale-110 transition-transform"
+                  style={{
+                    background: "var(--bg)",
+                    borderColor: "var(--border)",
+                  }}
+                >
                   💼
                 </div>
                 <div className="min-w-0">
-                  <span className="font-mono-technical text-[11px] uppercase tracking-wider text-[var(--text-secondary)] block">
+                  <span
+                    className="font-mono-technical text-[11px] uppercase tracking-wider block"
+                    style={{ color: "var(--text-secondary)" }}
+                  >
                     LinkedIn Profile
                   </span>
-                  <span className="text-sm font-semibold text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors truncate block">
+                  <span
+                    className="text-sm font-semibold truncate block"
+                    style={{ color: "var(--text-primary)" }}
+                  >
                     linkedin.com/in/rhimkhan ↗
                   </span>
                 </div>
@@ -171,30 +265,66 @@ export default function ContactSection() {
                 href={personalInfo.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="portfolio-card rounded-xl p-4 flex items-center gap-4 hover:border-[var(--accent)] transition-all group"
+                className="portfolio-card rounded-xl p-4 flex items-center gap-4 transition-all group"
+                style={{
+                  background: "var(--card-bg)",
+                  border: "1px solid var(--border)",
+                  boxShadow: "var(--shadow)",
+                }}
               >
-                <div className="w-10 h-10 rounded-lg bg-[var(--bg)] border border-[var(--border)] flex items-center justify-center text-lg shrink-0 group-hover:scale-110 transition-transform">
+                <div
+                  className="w-10 h-10 rounded-lg border flex items-center justify-center text-lg shrink-0 group-hover:scale-110 transition-transform"
+                  style={{
+                    background: "var(--bg)",
+                    borderColor: "var(--border)",
+                  }}
+                >
                   🐙
                 </div>
                 <div className="min-w-0">
-                  <span className="font-mono-technical text-[11px] uppercase tracking-wider text-[var(--text-secondary)] block">
+                  <span
+                    className="font-mono-technical text-[11px] uppercase tracking-wider block"
+                    style={{ color: "var(--text-secondary)" }}
+                  >
                     GitHub Ecosystem
                   </span>
-                  <span className="text-sm font-semibold text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors truncate block">
+                  <span
+                    className="text-sm font-semibold truncate block"
+                    style={{ color: "var(--text-primary)" }}
+                  >
                     github.com/Rhimkhan ↗
                   </span>
                 </div>
               </a>
 
-              <div className="portfolio-card rounded-xl p-4 flex items-center gap-4">
-                <div className="w-10 h-10 rounded-lg bg-[var(--bg)] border border-[var(--border)] flex items-center justify-center text-lg shrink-0">
+              <div
+                className="portfolio-card rounded-xl p-4 flex items-center gap-4"
+                style={{
+                  background: "var(--card-bg)",
+                  border: "1px solid var(--border)",
+                  boxShadow: "var(--shadow)",
+                }}
+              >
+                <div
+                  className="w-10 h-10 rounded-lg border flex items-center justify-center text-lg shrink-0"
+                  style={{
+                    background: "var(--bg)",
+                    borderColor: "var(--border)",
+                  }}
+                >
                   📍
                 </div>
                 <div className="min-w-0">
-                  <span className="font-mono-technical text-[11px] uppercase tracking-wider text-[var(--text-secondary)] block">
+                  <span
+                    className="font-mono-technical text-[11px] uppercase tracking-wider block"
+                    style={{ color: "var(--text-secondary)" }}
+                  >
                     Base Location
                   </span>
-                  <span className="text-sm font-semibold text-[var(--text-primary)] block">
+                  <span
+                    className="text-sm font-semibold block"
+                    style={{ color: "var(--text-primary)" }}
+                  >
                     {personalInfo.location}
                   </span>
                 </div>
@@ -203,18 +333,34 @@ export default function ContactSection() {
           </div>
 
           {/* Right Column: Contact Form */}
-          <div className="lg:col-span-7 portfolio-card rounded-2xl p-7 sm:p-9 scroll-animate delay-100">
-            <h3 className="font-display font-bold text-2xl text-[var(--text-primary)] mb-2">
+          <div
+            className="lg:col-span-7 portfolio-card rounded-2xl p-7 sm:p-9 scroll-animate delay-100"
+            style={{
+              background: "var(--card-bg)",
+              border: "1px solid var(--border)",
+              boxShadow: "var(--shadow)",
+            }}
+          >
+            <h3
+              className="font-display font-bold text-2xl mb-2"
+              style={{ color: "var(--text-primary)" }}
+            >
               Send a Direct Message
             </h3>
-            <p className="text-sm text-[var(--text-secondary)] mb-6 font-normal">
+            <p
+              className="text-sm mb-6 font-normal"
+              style={{ color: "var(--text-secondary)" }}
+            >
               Fill out the form below and I&apos;ll get back to you shortly.
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-mono-technical uppercase tracking-wider text-[var(--text-secondary)] mb-1.5 font-medium">
+                  <label
+                    className="block text-xs font-mono-technical uppercase tracking-wider mb-1.5 font-medium"
+                    style={{ color: "var(--text-secondary)" }}
+                  >
                     Full Name *
                   </label>
                   <input
@@ -224,12 +370,20 @@ export default function ContactSection() {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="e.g. John Doe"
-                    className="w-full px-4 py-3 rounded-xl border border-[var(--border)] bg-[var(--bg)] text-[var(--text-primary)] text-sm focus:outline-none focus:border-[var(--accent)] transition-colors"
+                    className="w-full px-4 py-3 rounded-xl border text-sm focus:outline-none transition-colors"
+                    style={{
+                      background: "var(--bg)",
+                      borderColor: "var(--border)",
+                      color: "var(--text-primary)",
+                    }}
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono-technical uppercase tracking-wider text-[var(--text-secondary)] mb-1.5 font-medium">
+                  <label
+                    className="block text-xs font-mono-technical uppercase tracking-wider mb-1.5 font-medium"
+                    style={{ color: "var(--text-secondary)" }}
+                  >
                     Email Address *
                   </label>
                   <input
@@ -239,13 +393,21 @@ export default function ContactSection() {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="e.g. john@example.com"
-                    className="w-full px-4 py-3 rounded-xl border border-[var(--border)] bg-[var(--bg)] text-[var(--text-primary)] text-sm focus:outline-none focus:border-[var(--accent)] transition-colors"
+                    className="w-full px-4 py-3 rounded-xl border text-sm focus:outline-none transition-colors"
+                    style={{
+                      background: "var(--bg)",
+                      borderColor: "var(--border)",
+                      color: "var(--text-primary)",
+                    }}
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-mono-technical uppercase tracking-wider text-[var(--text-secondary)] mb-1.5 font-medium">
+                <label
+                  className="block text-xs font-mono-technical uppercase tracking-wider mb-1.5 font-medium"
+                  style={{ color: "var(--text-secondary)" }}
+                >
                   Subject
                 </label>
                 <input
@@ -254,12 +416,20 @@ export default function ContactSection() {
                   value={formData.subject}
                   onChange={handleChange}
                   placeholder="Internship / Collaboration / Inquiry"
-                  className="w-full px-4 py-3 rounded-xl border border-[var(--border)] bg-[var(--bg)] text-[var(--text-primary)] text-sm focus:outline-none focus:border-[var(--accent)] transition-colors"
+                  className="w-full px-4 py-3 rounded-xl border text-sm focus:outline-none transition-colors"
+                  style={{
+                    background: "var(--bg)",
+                    borderColor: "var(--border)",
+                    color: "var(--text-primary)",
+                  }}
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-mono-technical uppercase tracking-wider text-[var(--text-secondary)] mb-1.5 font-medium">
+                <label
+                  className="block text-xs font-mono-technical uppercase tracking-wider mb-1.5 font-medium"
+                  style={{ color: "var(--text-secondary)" }}
+                >
                   Message *
                 </label>
                 <textarea
@@ -269,7 +439,12 @@ export default function ContactSection() {
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Tell me about your project, idea, or opportunity..."
-                  className="w-full px-4 py-3 rounded-xl border border-[var(--border)] bg-[var(--bg)] text-[var(--text-primary)] text-sm focus:outline-none focus:border-[var(--accent)] transition-colors resize-none"
+                  className="w-full px-4 py-3 rounded-xl border text-sm focus:outline-none transition-colors resize-none"
+                  style={{
+                    background: "var(--bg)",
+                    borderColor: "var(--border)",
+                    color: "var(--text-primary)",
+                  }}
                 />
               </div>
 
@@ -290,7 +465,11 @@ export default function ContactSection() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full py-3.5 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white font-mono-technical text-xs uppercase tracking-wider font-semibold shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 flex items-center justify-center gap-2"
+                className="w-full py-3.5 rounded-xl font-mono-technical text-xs uppercase tracking-wider font-semibold shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 flex items-center justify-center gap-2 text-white"
+                style={{
+                  background:
+                    "linear-gradient(135deg, var(--accent) 0%, #3b82f6 100%)",
+                }}
               >
                 {loading ? (
                   <span>Sending message...</span>
@@ -302,7 +481,10 @@ export default function ContactSection() {
                 )}
               </button>
 
-              <p className="text-center text-[11px] text-[var(--text-secondary)] pt-2 font-mono-technical">
+              <p
+                className="text-center text-[11px] pt-2 font-mono-technical"
+                style={{ color: "var(--text-secondary)" }}
+              >
                 🔒 Your info is private and never shared.
               </p>
             </form>
