@@ -20,8 +20,12 @@ export default function AboutSection() {
           <span className="font-mono-technical text-xs uppercase tracking-widest text-[var(--accent)] font-semibold inline-block mb-3 px-3 py-1 rounded-full border border-[var(--border)] bg-[var(--card-bg)]">
             02 · BACKGROUND &amp; PHILOSOPHY
           </span>
-          <h2 className="font-display text-3xl sm:text-5xl font-semibold tracking-tight text-[var(--text-primary)]">
-            ABOUT ME
+          <h2
+            className="font-display text-3xl sm:text-5xl tracking-tight"
+            style={{ fontWeight: 900 }}
+          >
+            <span style={{ color: "var(--text-primary)" }}>About</span>{" "}
+            <span style={{ color: "var(--accent)" }}>Me</span>
           </h2>
         </div>
 

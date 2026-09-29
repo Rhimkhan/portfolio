@@ -104,8 +104,9 @@ export default function Navbar() {
               />
             </svg>
           </div>
-          <span className="font-mono-technical text-sm font-semibold tracking-widest text-[var(--ink-color)] uppercase">
-            R HIM KHAN
+          <span className="font-mono-technical text-sm tracking-widest text-[var(--ink-color)] uppercase">
+            <span className="font-medium">R HIM</span>{" "}
+            <span className="font-bold text-[var(--accent)]">KHAN</span>
           </span>
         </a>
 
@@ -137,11 +138,14 @@ export default function Navbar() {
           <a
             href="/resume.pdf"
             download="RHimKhan_Resume.pdf"
-            className={`hidden sm:inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-full text-xs font-mono-technical uppercase tracking-wider font-semibold shadow-md transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] ${
-              isDarkMode
-                ? "bg-gradient-to-r from-teal-400 to-cyan-400 text-slate-950 shadow-[0_0_20px_rgba(0,255,224,0.3)] hover:shadow-[0_0_25px_rgba(0,255,224,0.5)]"
-                : "bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-[0_4px_14px_rgba(37,99,235,0.35)] hover:shadow-[0_6px_20px_rgba(37,99,235,0.45)]"
-            }`}
+            className="hidden sm:inline-flex items-center justify-center gap-1.5 rounded-full text-xs font-mono-technical uppercase tracking-wider font-bold shadow-md transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]"
+            style={{
+              background: "var(--accent)",
+              color: "#ffffff",
+              borderRadius: "999px",
+              padding: "8px 20px",
+              fontWeight: 700,
+            }}
           >
             <span>↓</span> Resume
           </a>
@@ -219,11 +223,14 @@ export default function Navbar() {
             href="/resume.pdf"
             download="RHimKhan_Resume.pdf"
             onClick={() => setMobileMenuOpen(false)}
-            className={`w-full inline-flex items-center justify-center gap-2 py-3 rounded-full text-xs font-mono-technical uppercase tracking-wider font-semibold shadow-md ${
-              isDarkMode
-                ? "bg-gradient-to-r from-teal-400 to-cyan-400 text-slate-950"
-                : "bg-gradient-to-r from-blue-600 to-indigo-600 text-white"
-            }`}
+            className="w-full inline-flex items-center justify-center gap-2 rounded-full text-xs font-mono-technical uppercase tracking-wider font-bold shadow-md"
+            style={{
+              background: "var(--accent)",
+              color: "#ffffff",
+              borderRadius: "999px",
+              padding: "10px 20px",
+              fontWeight: 700,
+            }}
           >
             <span>↓</span> Download Resume
           </a>

@@ -84,10 +84,11 @@ export default function GitHubSection() {
             • LIVE GITHUB ACTIVITY
           </span>
           <h2
-            className="font-display text-3xl sm:text-5xl font-semibold tracking-tight"
-            style={{ color: "var(--text-primary)" }}
+            className="font-display text-3xl sm:text-5xl tracking-tight"
+            style={{ fontWeight: 900 }}
           >
-            CODE &amp; COMMIT ECOSYSTEM
+            <span style={{ color: "var(--text-primary)" }}>CODE &amp; COMMIT</span>{" "}
+            <span style={{ color: "var(--accent)" }}>ECOSYSTEM</span>
           </h2>
           <p
             className="font-display text-sm sm:text-base mt-3 font-normal"

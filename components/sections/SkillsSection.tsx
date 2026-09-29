@@ -28,10 +28,11 @@ export default function SkillsSection() {
             CAPABILITIES &amp; TOOLING
           </span>
           <h2
-            className="font-display text-3xl sm:text-5xl font-semibold tracking-tight"
-            style={{ color: "var(--text-primary)" }}
+            className="font-display text-3xl sm:text-5xl tracking-tight"
+            style={{ fontWeight: 900 }}
           >
-            My Skills
+            <span style={{ color: "var(--text-primary)" }}>My</span>{" "}
+            <span style={{ color: "var(--accent)" }}>Skills</span>
           </h2>
           <p
             className="font-display text-sm sm:text-base mt-3 font-normal"

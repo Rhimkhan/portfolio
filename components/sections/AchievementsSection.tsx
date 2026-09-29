@@ -28,10 +28,11 @@ export default function AchievementsSection() {
             HONORS &amp; HIGHLIGHTS
           </span>
           <h2
-            className="font-display text-3xl sm:text-5xl font-semibold tracking-tight"
-            style={{ color: "var(--text-primary)" }}
+            className="font-display text-3xl sm:text-5xl tracking-tight"
+            style={{ fontWeight: 900 }}
           >
-            Achievements &amp; Recognition
+            <span style={{ color: "var(--text-primary)" }}>Key</span>{" "}
+            <span style={{ color: "var(--accent)" }}>Achievements</span>
           </h2>
           <p
             className="font-display text-sm sm:text-base mt-2 font-normal"

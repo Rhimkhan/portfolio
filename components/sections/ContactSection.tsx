@@ -81,10 +81,11 @@ export default function ContactSection() {
             • AVAILABLE FOR OPPORTUNITIES
           </span>
           <h2
-            className="font-display text-3xl sm:text-5xl font-semibold tracking-tight"
-            style={{ color: "var(--text-primary)" }}
+            className="font-display text-3xl sm:text-5xl tracking-tight"
+            style={{ fontWeight: 900 }}
           >
-            Let&apos;s Build Something Extraordinary
+            <span style={{ color: "var(--text-primary)" }}>Get in</span>{" "}
+            <span style={{ color: "var(--accent)" }}>Touch</span>
           </h2>
           <p
             className="font-display text-sm sm:text-base mt-2 font-normal"
@@ -465,10 +466,10 @@ export default function ContactSection() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full py-3.5 rounded-xl font-mono-technical text-xs uppercase tracking-wider font-semibold shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 flex items-center justify-center gap-2 text-white"
+                className="w-full py-3.5 rounded-xl font-mono-technical text-xs uppercase tracking-wider font-bold shadow-lg hover:brightness-110 transition-all duration-300 disabled:opacity-50 flex items-center justify-center gap-2 text-white"
                 style={{
-                  background:
-                    "linear-gradient(135deg, var(--accent) 0%, #3b82f6 100%)",
+                  background: "var(--accent)",
+                  color: "#ffffff",
                 }}
               >
                 {loading ? (

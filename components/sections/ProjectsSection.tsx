@@ -29,10 +29,11 @@ export default function ProjectsSection() {
               PORTFOLIO SHOWCASE
             </span>
             <h2
-              className="font-display text-3xl sm:text-5xl font-semibold tracking-tight"
-              style={{ color: "var(--text-primary)" }}
+              className="font-display text-3xl sm:text-5xl tracking-tight"
+              style={{ fontWeight: 900 }}
             >
-              Featured Projects
+              <span style={{ color: "var(--text-primary)" }}>Featured</span>{" "}
+              <span style={{ color: "var(--accent)" }}>Projects</span>
             </h2>
           </div>
           <p

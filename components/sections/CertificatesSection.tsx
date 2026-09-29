@@ -45,10 +45,11 @@ export default function CertificatesSection() {
               CREDENTIALS &amp; RECOGNITION
             </span>
             <h2
-              className="font-display text-3xl sm:text-5xl font-semibold tracking-tight"
-              style={{ color: "var(--text-primary)" }}
+              className="font-display text-3xl sm:text-5xl tracking-tight"
+              style={{ fontWeight: 900 }}
             >
-              My Certificates &amp; Badges
+              <span style={{ color: "var(--text-primary)" }}>My</span>{" "}
+              <span style={{ color: "var(--accent)" }}>Certificates</span>
             </h2>
           </div>
 

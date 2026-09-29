@@ -260,48 +260,151 @@ export default function GlassHero() {
 
       {/* LAYER 4: Headline and Copy (R Him Khan) */}
       <div className="relative z-[3] w-full h-full pointer-events-none">
+        {/* Most Recent Badge */}
+        <div
+          className="absolute scroll-animate pointer-events-auto z-10 flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[var(--border)] bg-[var(--card-bg)]/80 backdrop-blur-md text-xs font-mono-technical font-semibold shadow-sm"
+          style={{
+            top: "clamp(80px, 11vh, 105px)",
+            left: "max(5.6vw, 2rem)",
+            color: "var(--text-primary)",
+          }}
+        >
+          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+          <span>
+            Most Recent: <span style={{ color: "var(--accent)" }}>AI Intern @ Codtech IT Solutions</span>
+          </span>
+        </div>
+
+        {/* Right Side Vertical Text: Build · Learn · Grow */}
+        <div
+          className="hidden md:flex absolute right-6 top-1/2 -translate-y-1/2 items-center gap-3 pointer-events-none select-none z-10"
+          style={{ writingMode: "vertical-rl" }}
+        >
+          <span
+            className="font-mono-technical text-[11px] uppercase tracking-[0.25em] font-semibold"
+            style={{ color: "var(--text-muted)" }}
+          >
+            Build · Learn · Grow
+          </span>
+          <span className="w-px h-12 bg-[var(--border)]" />
+        </div>
+
+        {/* Right Side Section Labels */}
+        <div
+          className="hidden lg:flex absolute right-14 top-[28%] items-center pointer-events-none select-none opacity-50 z-10"
+          style={{ writingMode: "vertical-rl" }}
+        >
+          <span
+            className="font-mono-technical text-[9px] uppercase tracking-[0.22em] font-medium"
+            style={{ color: "var(--text-secondary)" }}
+          >
+            SKILLS · PROJECTS · EXPERIENCE · IMPACT
+          </span>
+        </div>
+
+        {/* Main Hero Name */}
         <div
           className="absolute scroll-animate"
           style={{
-            top: "32%",
+            top: "23%",
             left: "max(5.6vw, 2rem)",
           }}
         >
-          <div className="font-mono-technical text-xs uppercase tracking-widest text-[var(--accent)] mb-2 font-medium">
-            AI/ML & FULL STACK DEVELOPER
+          <div
+            className="font-mono-technical text-xs uppercase tracking-widest mb-3 font-semibold"
+            style={{ color: "var(--accent)" }}
+          >
+            AI/ML &amp; FULL STACK DEVELOPER
           </div>
           <h1
-            className="font-display font-medium text-[var(--ink-color)] tracking-[-0.085em] leading-[0.93] m-0"
+            className="font-display tracking-[-0.05em] leading-[0.9] m-0"
             style={{
-              fontSize: "clamp(4.2rem, 5.8vw, 6.4rem)",
+              fontSize: "clamp(60px, 10vw, 120px)",
+              fontWeight: 900,
             }}
           >
-            Hi, I&apos;m<br />
-            <span className="text-[var(--accent)]">R Him</span><br />
-            Khan.
+            <span style={{ color: "var(--text-primary)" }}>R Him</span>
+            <br />
+            <span style={{ color: "var(--accent)" }}>Khan.</span>
           </h1>
         </div>
 
+        {/* Bottom Left Stats & Intro */}
         <div
-          className="absolute max-w-[480px] pointer-events-auto scroll-animate delay-100"
+          className="absolute max-w-[540px] pointer-events-auto scroll-animate delay-100 z-10"
           style={{
-            bottom: "max(3rem, env(safe-area-inset-bottom))",
+            bottom: "clamp(2.5rem, 5vh, 4rem)",
             left: "max(5.6vw, 2rem)",
           }}
         >
-          <p className="font-display text-sm md:text-base leading-relaxed text-[var(--text-muted)] font-normal tracking-[-0.015em] mb-4">
+          <p
+            className="font-display text-sm md:text-base leading-relaxed font-normal tracking-[-0.015em] mb-4"
+            style={{ color: "var(--text-secondary)" }}
+          >
             B.Tech in AI &amp; ML (Amity University). Building intelligent computer vision systems, NLP pipelines, and tactile full-stack web applications.
           </p>
 
-          <a
-            href="#projects"
-            className="inline-flex items-center justify-center min-h-[44px] px-7 rounded-full bg-[var(--accent)] text-white text-xs font-mono-technical tracking-wider uppercase font-semibold shadow-[0_4px_16px_rgba(0,102,255,0.3)] hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] transition-all"
-            style={{
-              transitionTimingFunction: "var(--ease-primary)",
-            }}
+          <div className="flex flex-wrap items-center gap-3 mb-4">
+            <a
+              href="#projects"
+              className="inline-flex items-center justify-center min-h-[42px] px-7 rounded-full text-white text-xs font-mono-technical tracking-wider uppercase font-bold shadow-lg hover:brightness-110 transition-all hover:scale-105 active:scale-95"
+              style={{
+                background: "var(--accent)",
+                color: "#ffffff",
+              }}
+            >
+              View Projects
+            </a>
+            <a
+              href="#contact"
+              className="inline-flex items-center justify-center min-h-[42px] px-6 rounded-full text-xs font-mono-technical tracking-wider uppercase font-semibold border border-[var(--border)] bg-[var(--card-bg)]/80 backdrop-blur-sm transition-all hover:border-[var(--accent)]"
+              style={{
+                color: "var(--text-primary)",
+              }}
+            >
+              Get in Touch
+            </a>
+          </div>
+
+          {/* Stats Row */}
+          <div
+            className="flex flex-wrap items-center gap-3 sm:gap-4 pt-3 border-t border-[var(--border)] font-mono-technical text-xs font-semibold"
+            style={{ color: "var(--text-secondary)" }}
           >
-            View Projects
-          </a>
+            <div className="flex items-center gap-1.5">
+              <span className="text-sm font-black" style={{ color: "var(--accent)" }}>
+                5+
+              </span>
+              <span className="text-[11px] uppercase tracking-wider">PROJECTS BUILT</span>
+            </div>
+            <span style={{ color: "var(--border)" }}>|</span>
+            <div className="flex items-center gap-1.5">
+              <span className="text-sm font-black" style={{ color: "var(--accent)" }}>
+                3+
+              </span>
+              <span className="text-[11px] uppercase tracking-wider">INTERNSHIPS</span>
+            </div>
+            <span style={{ color: "var(--border)" }}>|</span>
+            <div className="flex items-center gap-1.5">
+              <span className="text-sm font-black" style={{ color: "var(--accent)" }}>
+                4+
+              </span>
+              <span className="text-[11px] uppercase tracking-wider">CERTIFICATES</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom SCROLL indicator with arrow */}
+        <div className="hidden sm:flex absolute bottom-5 left-1/2 -translate-x-1/2 flex-col items-center gap-1 pointer-events-none z-10 animate-bounce opacity-70">
+          <span
+            className="font-mono-technical text-[10px] tracking-[0.2em] uppercase font-bold"
+            style={{ color: "var(--text-muted)" }}
+          >
+            SCROLL
+          </span>
+          <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: "var(--accent)" }}>
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
         </div>
       </div>
 

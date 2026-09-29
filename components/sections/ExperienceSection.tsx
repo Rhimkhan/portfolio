@@ -32,10 +32,11 @@ export default function ExperienceSection() {
             CAREER &amp; INTERNSHIPS
           </span>
           <h2
-            className="font-display text-3xl sm:text-5xl font-semibold tracking-tight"
-            style={{ color: "var(--text-primary)" }}
+            className="font-display text-3xl sm:text-5xl tracking-tight"
+            style={{ fontWeight: 900 }}
           >
-            Work Experience
+            <span style={{ color: "var(--text-primary)" }}>Work</span>{" "}
+            <span style={{ color: "var(--accent)" }}>Experience</span>
           </h2>
           <p
             className="font-display text-sm sm:text-base mt-2 font-normal"
