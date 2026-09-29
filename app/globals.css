@@ -22,6 +22,7 @@
   --button-hover: #fafcff;
   --text-muted: #4a5568;
   --nav-link: #374151;
+  --nav-active: #2563eb;
   --monogram-bg: rgba(255, 255, 255, 0.8);
   --monogram-border: rgba(0, 0, 0, 0.1);
   --ease-primary: cubic-bezier(0.16, 1, 0.3, 1);
@@ -51,6 +52,7 @@ body.dark-mode {
   --button-hover: #131e34;
   --text-muted: #94a3b8;
   --nav-link: #cbd5e1;
+  --nav-active: #00ffe0;
   --monogram-bg: rgba(12, 20, 36, 0.85);
   --monogram-border: rgba(0, 255, 224, 0.25);
 }
@@ -271,11 +273,14 @@ body.dark-mode .theme-btn .moon {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--nav-link);
-  transition: color 0.2s ease;
+  opacity: 1 !important;
+  transition: color 0.2s ease, opacity 0.2s ease;
 }
 
-.nav-link:hover {
-  color: var(--accent);
+.nav-link:hover,
+.nav-link.active {
+  color: var(--nav-active) !important;
+  opacity: 1 !important;
 }
 
 .portfolio-card:hover {

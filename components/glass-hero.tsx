@@ -186,6 +186,7 @@ export default function GlassHero() {
 
   return (
     <div
+      id="home"
       ref={containerRef}
       onPointerEnter={handlePointerEnter}
       onPointerMove={handlePointerMove}

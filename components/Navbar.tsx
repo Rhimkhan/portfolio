@@ -8,32 +8,71 @@ export default function Navbar() {
   const isDarkMode = theme === "dark";
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>("home");
+
+  const navLinks = [
+    { label: "Home", href: "#home", id: "home" },
+    { label: "About", href: "#about", id: "about" },
+    { label: "Projects", href: "#projects", id: "projects" },
+    { label: "Skills", href: "#skills", id: "skills" },
+    { label: "Experience", href: "#experience", id: "experience" },
+    { label: "Certificates", href: "#certificates", id: "certificates" },
+    { label: "GitHub", href: "#github", id: "github" },
+    { label: "Contact", href: "#contact", id: "contact" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
+
+      const sectionIds = [
+        "home",
+        "about",
+        "projects",
+        "skills",
+        "experience",
+        "certificates",
+        "github",
+        "contact",
+      ];
+
+      // If scrolled near page bottom, set active to contact
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 80) {
+        setActiveSection("contact");
+        return;
+      }
+
+      if (window.scrollY < 100) {
+        setActiveSection("home");
+        return;
+      }
+
+      const scrollPosition = window.scrollY + 250;
+
+      for (let i = sectionIds.length - 1; i >= 0; i--) {
+        const id = sectionIds[i];
+        const el = document.getElementById(id);
+        if (el) {
+          const top = el.offsetTop;
+          if (scrollPosition >= top) {
+            setActiveSection(id);
+            break;
+          }
+        }
+      }
     };
+
     window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const navLinks = [
-    { label: "Home", href: "#" },
-    { label: "About", href: "#about" },
-    { label: "Projects", href: "#projects" },
-    { label: "Skills", href: "#skills" },
-    { label: "Experience", href: "#experience" },
-    { label: "Certificates", href: "#certificates" },
-    { label: "GitHub", href: "#github" },
-    { label: "Contact", href: "#contact" },
-  ];
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
           ? "bg-[var(--nav-bg)] backdrop-blur-xl border-b border-[var(--border)] shadow-sm py-3.5"
-          : "bg-transparent backdrop-blur-sm py-5"
+          : "bg-[var(--nav-bg)]/80 backdrop-blur-md border-b border-[var(--border)]/40 py-4.5"
       }`}
       style={{
         paddingLeft: "max(5.6vw, 1.5rem)",
@@ -43,7 +82,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Brand Monogram + Name */}
         <a
-          href="#"
+          href="#home"
           className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] rounded-lg p-1"
           aria-label="R Him Khan - Home"
         >
@@ -72,15 +111,24 @@ export default function Navbar() {
 
         {/* Desktop Navigation Links */}
         <div className="hidden lg:flex items-center gap-5 xl:gap-6">
-          {navLinks.map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              className="nav-link font-mono-technical text-[13px] font-bold tracking-[0.12em] uppercase text-[var(--nav-link)] hover:text-[var(--accent)] min-h-[38px] flex items-center px-1 transition-colors duration-200"
-            >
-              {item.label}
-            </a>
-          ))}
+          {navLinks.map((item) => {
+            const isActive = activeSection === item.id;
+            return (
+              <a
+                key={item.label}
+                href={item.href}
+                className={`nav-link font-mono-technical text-[13px] font-bold tracking-[0.12em] uppercase min-h-[38px] flex items-center px-1 transition-colors duration-200 ${
+                  isActive ? "active" : ""
+                }`}
+                style={{
+                  color: isActive ? "var(--nav-active)" : "var(--nav-link)",
+                  opacity: 1,
+                }}
+              >
+                {item.label}
+              </a>
+            );
+          })}
         </div>
 
         {/* Right Actions: Resume Button + Theme Toggle + Mobile Hamburger */}
@@ -146,16 +194,25 @@ export default function Navbar() {
       {mobileMenuOpen && (
         <div className="lg:hidden mt-3 rounded-2xl border border-[var(--border)] bg-[var(--card-bg)] backdrop-blur-2xl p-6 shadow-2xl flex flex-col gap-4 animate-in fade-in slide-in-from-top-2 duration-200">
           <div className="flex flex-col gap-2">
-            {navLinks.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="nav-link font-mono-technical text-[13px] font-bold tracking-[0.12em] uppercase text-[var(--nav-link)] hover:text-[var(--accent)] py-2 border-b border-[var(--border)] transition-colors duration-200"
-              >
-                {item.label}
-              </a>
-            ))}
+            {navLinks.map((item) => {
+              const isActive = activeSection === item.id;
+              return (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`nav-link font-mono-technical text-[13px] font-bold tracking-[0.12em] uppercase py-2 border-b border-[var(--border)] transition-colors duration-200 ${
+                    isActive ? "active" : ""
+                  }`}
+                  style={{
+                    color: isActive ? "var(--nav-active)" : "var(--nav-link)",
+                    opacity: 1,
+                  }}
+                >
+                  {item.label}
+                </a>
+              );
+            })}
           </div>
 
           <a
