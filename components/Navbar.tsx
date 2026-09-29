@@ -104,9 +104,13 @@ export default function Navbar() {
               />
             </svg>
           </div>
-          <span className="font-mono-technical text-sm tracking-widest text-[var(--ink-color)] uppercase">
-            <span className="font-medium">R HIM</span>{" "}
-            <span className="font-bold text-[var(--accent)]">KHAN</span>
+          <span className="font-mono-technical text-sm tracking-wider">
+            <span className="font-normal" style={{ color: "var(--text-primary)" }}>
+              R Him{" "}
+            </span>
+            <span className="font-bold" style={{ color: "var(--accent)" }}>
+              Khan
+            </span>
           </span>
         </a>
 

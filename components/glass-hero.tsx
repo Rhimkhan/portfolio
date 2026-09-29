@@ -317,15 +317,15 @@ export default function GlassHero() {
             AI/ML &amp; FULL STACK DEVELOPER
           </div>
           <h1
-            className="font-display tracking-[-0.05em] leading-[0.9] m-0"
+            className="font-display font-bold tracking-[-0.04em] leading-[0.9] m-0"
             style={{
               fontSize: "clamp(60px, 10vw, 120px)",
-              fontWeight: 900,
+              fontWeight: 700,
             }}
           >
-            <span style={{ color: "var(--text-primary)" }}>R Him</span>
+            <span style={{ color: "var(--text-primary)", fontWeight: 700 }}>R Him</span>
             <br />
-            <span style={{ color: "var(--accent)" }}>Khan.</span>
+            <span style={{ color: "var(--accent)", fontWeight: 700 }}>Khan.</span>
           </h1>
         </div>
 
