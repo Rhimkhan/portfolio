@@ -71,12 +71,12 @@ export default function Navbar() {
         </a>
 
         {/* Desktop Navigation Links */}
-        <div className="hidden lg:flex items-center gap-6 xl:gap-7">
+        <div className="hidden lg:flex items-center gap-5 xl:gap-6">
           {navLinks.map((item) => (
             <a
               key={item.label}
               href={item.href}
-              className="font-mono-technical text-xs uppercase tracking-wider text-[var(--nav-link)] hover:text-[var(--accent)] min-h-[38px] flex items-center px-1 transition-colors"
+              className="nav-link font-mono-technical text-[13px] font-bold tracking-[0.12em] uppercase text-[var(--nav-link)] hover:text-[var(--accent)] min-h-[38px] flex items-center px-1 transition-colors duration-200"
             >
               {item.label}
             </a>
@@ -151,7 +151,7 @@ export default function Navbar() {
                 key={item.label}
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="font-mono-technical text-sm uppercase tracking-wider text-[var(--text-primary)] hover:text-[var(--accent)] py-2 border-b border-[var(--border)] transition-colors"
+                className="nav-link font-mono-technical text-[13px] font-bold tracking-[0.12em] uppercase text-[var(--nav-link)] hover:text-[var(--accent)] py-2 border-b border-[var(--border)] transition-colors duration-200"
               >
                 {item.label}
               </a>

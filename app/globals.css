@@ -264,6 +264,20 @@ body.dark-mode .theme-btn .moon {
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* Navigation Links */
+.nav-link {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--nav-link);
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--accent);
+}
+
 .portfolio-card:hover {
   transform: translateY(-4px);
   border-color: var(--accent);
