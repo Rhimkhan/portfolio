@@ -69,14 +69,17 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-[var(--nav-bg)] backdrop-blur-xl border-b border-[var(--border)] shadow-sm py-3.5"
-          : "bg-[var(--nav-bg)]/80 backdrop-blur-md border-b border-[var(--border)]/40 py-4.5"
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b"
       style={{
         paddingLeft: "max(5.6vw, 1.5rem)",
         paddingRight: "max(5.6vw, 1.5rem)",
+        backgroundColor: "var(--nav-bg)",
+        backdropFilter: "blur(20px)",
+        WebkitBackdropFilter: "blur(20px)",
+        borderColor: scrolled ? "var(--border)" : "transparent",
+        boxShadow: scrolled ? "var(--shadow)" : "none",
+        paddingTop: scrolled ? "0.85rem" : "1.1rem",
+        paddingBottom: scrolled ? "0.85rem" : "1.1rem",
       }}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -126,7 +129,7 @@ export default function Navbar() {
                   isActive ? "active" : ""
                 }`}
                 style={{
-                  color: isActive ? "var(--nav-active)" : "var(--nav-link)",
+                  color: isActive ? "#c2410c" : "var(--nav-link)",
                   opacity: 1,
                 }}
               >
@@ -142,13 +145,15 @@ export default function Navbar() {
           <a
             href="/resume.pdf"
             download="RHimKhan_Resume.pdf"
-            className="hidden sm:inline-flex items-center justify-center gap-1.5 rounded-full text-xs font-mono-technical uppercase tracking-wider font-bold shadow-md transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]"
+            className="hidden sm:inline-flex items-center justify-center gap-1.5 shadow-md transition-all duration-200 hover:brightness-110 hover:scale-[1.02] active:scale-[0.98]"
             style={{
-              background: "var(--accent)",
+              background: "#c2410c",
               color: "#ffffff",
               borderRadius: "999px",
               padding: "8px 20px",
               fontWeight: 700,
+              fontSize: "13px",
+              letterSpacing: "0.05em",
             }}
           >
             <span>↓</span> Resume
@@ -213,7 +218,7 @@ export default function Navbar() {
                     isActive ? "active" : ""
                   }`}
                   style={{
-                    color: isActive ? "var(--nav-active)" : "var(--nav-link)",
+                    color: isActive ? "#c2410c" : "var(--nav-link)",
                     opacity: 1,
                   }}
                 >
@@ -227,13 +232,15 @@ export default function Navbar() {
             href="/resume.pdf"
             download="RHimKhan_Resume.pdf"
             onClick={() => setMobileMenuOpen(false)}
-            className="w-full inline-flex items-center justify-center gap-2 rounded-full text-xs font-mono-technical uppercase tracking-wider font-bold shadow-md"
+            className="w-full inline-flex items-center justify-center gap-2 shadow-md transition-all duration-200"
             style={{
-              background: "var(--accent)",
+              background: "#c2410c",
               color: "#ffffff",
               borderRadius: "999px",
               padding: "10px 20px",
               fontWeight: 700,
+              fontSize: "13px",
+              letterSpacing: "0.05em",
             }}
           >
             <span>↓</span> Download Resume
