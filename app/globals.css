@@ -15,8 +15,6 @@
 
   --paper-bg: #f0f4ff;
   --ink-color: #0a0a0a;
-  --line-color: rgba(148, 175, 205, 0.28);
-  --line-color-circle: rgba(148, 175, 205, 0.35);
   --button-bg: #ffffff;
   --button-text: #0a0a0a;
   --button-border: rgba(0, 0, 0, 0.08);
@@ -47,8 +45,6 @@ body.dark-mode {
 
   --paper-bg: #050a14;
   --ink-color: #e2e8f0;
-  --line-color: rgba(0, 255, 224, 0.08);
-  --line-color-circle: rgba(0, 255, 224, 0.14);
   --button-bg: #0c1424;
   --button-text: #e2e8f0;
   --button-border: rgba(0, 255, 224, 0.2);
@@ -230,6 +226,12 @@ body.dark-mode .theme-btn .sun {
   transform: rotate(30deg);
 }
 
+[data-theme="dark"] .theme-btn,
+body.dark-mode .theme-btn {
+  border-color: rgba(0, 255, 224, 0.5);
+  box-shadow: 0 0 16px rgba(0, 255, 224, 0.25);
+}
+
 [data-theme="dark"] .theme-btn .moon,
 body.dark-mode .theme-btn .moon {
   opacity: 1;
@@ -270,7 +272,8 @@ body.dark-mode .theme-btn .moon {
 }
 
 /* Navigation Links */
-.nav-link {
+.nav-link,
+.nav-link:visited {
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -281,8 +284,10 @@ body.dark-mode .theme-btn .moon {
 }
 
 .nav-link:hover,
-.nav-link.active {
-  color: var(--nav-active) !important;
+.nav-link:focus,
+.nav-link.active,
+.nav-link.active:visited {
+  color: var(--accent) !important;
   opacity: 1 !important;
 }
 

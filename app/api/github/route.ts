@@ -19,7 +19,7 @@ export async function GET() {
         followers: 12,
         following: 15,
         created_at: "2023-01-15T00:00:00Z",
-        name: "R Him Khan",
+        name: "R him Khan",
       });
     }
 
@@ -29,7 +29,7 @@ export async function GET() {
       followers: data.followers ?? 0,
       following: data.following ?? 0,
       created_at: data.created_at ?? "",
-      name: data.name ?? "R Him Khan",
+      name: data.name ?? "R him Khan",
       avatar_url: data.avatar_url ?? "",
       bio: data.bio ?? "",
     });
@@ -40,7 +40,7 @@ export async function GET() {
       followers: 12,
       following: 15,
       created_at: "2023-01-15T00:00:00Z",
-      name: "R Him Khan",
+      name: "R him Khan",
     });
   }
 }

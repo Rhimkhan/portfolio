@@ -5,7 +5,7 @@ import { ChatBot } from "@/components/ChatBot";
 
 export const metadata: Metadata = {
   title: "Rhim Khan | Portfolio",
-  description: "Personal portfolio of R Him Khan — AI/ML Student & Full Stack Developer.",
+  description: "Personal portfolio of R him Khan — AI/ML Student & Full Stack Developer.",
 };
 
 export const viewport: Viewport = {

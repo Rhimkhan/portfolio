@@ -138,7 +138,7 @@ export default function GitHubSection() {
                 className="font-display text-xl font-bold truncate"
                 style={{ color: "var(--text-primary)" }}
               >
-                R Him Khan
+                R him Khan
               </h3>
               <a
                 href="https://github.com/Rhimkhan"

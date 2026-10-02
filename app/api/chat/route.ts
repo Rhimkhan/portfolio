@@ -1,12 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 const RHIM_INFO = `
-You are "Rex", R Him Khan's personal AI portfolio assistant. 
+You are "Rex", R him Khan's personal AI portfolio assistant. 
 Be friendly, concise, and enthusiastic. Always answer in the same 
 language the user writes in (Hindi/English/Hinglish).
 
 ABOUT R HIM KHAN:
-- Full Name: R Him Khan  
+- Full Name: R him Khan  
 - Role: AI/ML Student & Full Stack Developer
 - Education: B.Tech in AI & ML, Amity University Gwalior (3rd Year)
 - Internship: 4-week AI Internship at Codtech IT Solutions
@@ -34,22 +34,22 @@ function getLocalFallbackAnswer(prompt: string): string {
   const p = prompt.toLowerCase();
 
   if (p.includes('summary') || p.includes('about') || p.includes('who is') || p.includes('kaun hai')) {
-    return "R Him Khan is an AI/ML student and Full Stack Developer pursuing his B.Tech in AI & ML at Amity University Gwalior (3rd Year). He specializes in Machine Learning, Computer Vision, and full-stack web applications using React, Node.js, and Python.";
+    return "R him Khan is an AI/ML student and Full Stack Developer pursuing his B.Tech in AI & ML at Amity University Gwalior (3rd Year). He specializes in Machine Learning, Computer Vision, and full-stack web applications using React, Node.js, and Python.";
   }
   if (p.includes('project') || p.includes('kam') || p.includes('work')) {
-    return "R Him Khan has built several impactful projects including: 1) An Object Detection API with YOLOv8 & Flask, 2) A Real-Time NLP Sentiment Analysis pipeline, 3) Full-Stack Portfolio with React & Node.js, and 4) ML prediction models (House Price & Titanic Survival).";
+    return "R him Khan has built several impactful projects including: 1) An Object Detection API with YOLOv8 & Flask, 2) A Real-Time NLP Sentiment Analysis pipeline, 3) Full-Stack Portfolio with React & Node.js, and 4) ML prediction models (House Price & Titanic Survival).";
   }
   if (p.includes('skill') || p.includes('tech') || p.includes('technologies')) {
     return "His technical arsenal includes C++, Python, C, Java, Machine Learning, Computer Vision, NLP, DSA, along with full-stack web technologies like React, Node.js, Express, MongoDB, and Flask.";
   }
   if (p.includes('education') || p.includes('college') || p.includes('university') || p.includes('study')) {
-    return "R Him Khan is currently in his 3rd year pursuing B.Tech in Artificial Intelligence & Machine Learning at Amity University Gwalior.";
+    return "R him Khan is currently in his 3rd year pursuing B.Tech in Artificial Intelligence & Machine Learning at Amity University Gwalior.";
   }
   if (p.includes('contact') || p.includes('email') || p.includes('reach') || p.includes('hire')) {
-    return "You can reach R Him Khan directly via email at rhim78975730@gmail.com, on LinkedIn at linkedin.com/in/rhimkhan, or view his code on GitHub at github.com/Rhimkhan.";
+    return "You can reach R him Khan directly via email at rhim78975730@gmail.com, on LinkedIn at linkedin.com/in/rhimkhan, or view his code on GitHub at github.com/Rhimkhan.";
   }
 
-  return "R Him Khan is an AI/ML engineer & Full-Stack Developer skilled in Python, React, YOLOv8, and Machine Learning. Ask me about his projects, skills, education, or how to contact him!";
+  return "R him Khan is an AI/ML engineer & Full-Stack Developer skilled in Python, React, YOLOv8, and Machine Learning. Ask me about his projects, skills, education, or how to contact him!";
 }
 
 export async function POST(req: NextRequest) {

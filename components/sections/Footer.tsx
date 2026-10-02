@@ -196,7 +196,7 @@ export default function Footer() {
             color: "var(--text-secondary)",
           }}
         >
-          <p>© 2026 R Him Khan. All rights reserved.</p>
+          <p>© 2026 R him Khan. All rights reserved.</p>
           <p>Built with Next.js + Tailwind | Made in India 🇮🇳</p>
         </div>
       </div>

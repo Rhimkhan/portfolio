@@ -1,13 +1,14 @@
 "use client";
 
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { useTheme } from "@/lib/context/ThemeContext";
 import Navbar from "./Navbar";
+import DarkHero from "./DarkHero";
 
 const DESKTOP_RADIUS = 235;
 const MOBILE_RADIUS = 150;
 
-export default function GlassHero() {
+function LightGlassHero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const portraitLayersRef = useRef<HTMLDivElement>(null);
   const rawPos = useRef({ x: -999, y: -999 });
@@ -16,10 +17,6 @@ export default function GlassHero() {
   const targetRadius = useRef(0);
   const isTrackingTouch = useRef(false);
   const frameId = useRef<number | null>(null);
-
-  // Global Theme from ThemeContext
-  const { theme, toggle: toggleTheme } = useTheme();
-  const isDarkMode = theme === "dark";
 
   // Scroll Animation Observer
   useEffect(() => {
@@ -207,53 +204,14 @@ export default function GlassHero() {
           className="hero-portrait-base z-0"
           aria-hidden="true"
           style={{
-            backgroundImage: `url(${isDarkMode ? "/images/hero/base-dark-desktop.png" : "/images/hero/base-desktop.jpg"})`,
+            backgroundImage: "url(/images/hero/base-desktop.jpg)",
           }}
         />
         <div
           className="hero-portrait-reveal z-[1]"
           aria-hidden="true"
           style={{
-            backgroundImage: `url(${isDarkMode ? "/images/hero/reveal-dark-desktop.png" : "/images/hero/reveal-desktop.png"})`,
-          }}
-        />
-      </div>
-
-      {/* LAYER 3: Technical Grid + Large Outlined Circle */}
-      <div className="absolute inset-0 z-[2] pointer-events-none overflow-hidden" aria-hidden="true">
-        {/* Desktop Grid */}
-        <div className="hidden md:grid absolute inset-0 w-full h-full grid-cols-12 grid-rows-4 opacity-75">
-          {Array.from({ length: 48 }).map((_, i) => (
-            <div key={`desk-cell-${i}`} className="border-r border-b border-[var(--line-color)]" />
-          ))}
-        </div>
-
-        {/* Mobile Grid */}
-        <div className="grid md:hidden absolute inset-0 w-full h-full grid-cols-4 grid-rows-6 opacity-45">
-          {Array.from({ length: 24 }).map((_, i) => (
-            <div key={`mob-cell-${i}`} className="border-r border-b border-[var(--line-color)]" />
-          ))}
-        </div>
-
-        {/* Desktop Circle */}
-        <div
-          className="hidden md:block absolute rounded-full border border-[var(--line-color-circle)]"
-          style={{
-            width: "min(78vw, 72rem)",
-            aspectRatio: "1 / 1",
-            left: "8%",
-            top: "-36%",
-          }}
-        />
-
-        {/* Mobile Circle */}
-        <div
-          className="block md:hidden absolute rounded-full border border-[var(--line-color-circle)]"
-          style={{
-            width: "150vw",
-            aspectRatio: "1 / 1",
-            left: "-76%",
-            top: "-8%",
+            backgroundImage: "url(/images/hero/reveal-desktop.png)",
           }}
         />
       </div>
@@ -323,7 +281,7 @@ export default function GlassHero() {
               fontWeight: 700,
             }}
           >
-            <span style={{ color: "var(--text-primary)", fontWeight: 700 }}>R Him</span>
+            <span style={{ color: "var(--text-primary)", fontWeight: 700 }}>R him</span>
             <br />
             <span style={{ color: "var(--accent)", fontWeight: 700 }}>Khan.</span>
           </h1>
@@ -412,4 +370,19 @@ export default function GlassHero() {
       <Navbar />
     </div>
   );
+}
+
+export default function GlassHero() {
+  const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (mounted && theme === "dark") {
+    return <DarkHero />;
+  }
+
+  return <LightGlassHero />;
 }

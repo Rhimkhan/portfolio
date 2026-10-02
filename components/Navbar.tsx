@@ -42,7 +42,7 @@ export default function Navbar() {
         return;
       }
 
-      if (window.scrollY < 100) {
+      if (window.scrollY < 200) {
         setActiveSection("home");
         return;
       }
@@ -87,7 +87,7 @@ export default function Navbar() {
         <a
           href="#home"
           className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] rounded-lg p-1"
-          aria-label="R Him Khan - Home"
+          aria-label="R him Khan - Home"
         >
           <div className="w-8 h-8 rounded-full border border-[var(--monogram-border)] flex items-center justify-center bg-[var(--monogram-bg)] backdrop-blur-sm group-hover:border-[var(--accent)] transition-colors">
             <svg
@@ -109,7 +109,7 @@ export default function Navbar() {
           </div>
           <span className="font-mono-technical text-sm tracking-wider">
             <span className="font-normal" style={{ color: "var(--text-primary)" }}>
-              R Him{" "}
+              R him{" "}
             </span>
             <span className="font-bold" style={{ color: "var(--accent)" }}>
               Khan
@@ -129,7 +129,7 @@ export default function Navbar() {
                   isActive ? "active" : ""
                 }`}
                 style={{
-                  color: isActive ? "#c2410c" : "var(--nav-link)",
+                  color: isActive ? "var(--accent)" : "var(--nav-link)",
                   opacity: 1,
                 }}
               >
@@ -147,8 +147,10 @@ export default function Navbar() {
             download="RHimKhan_Resume.pdf"
             className="hidden sm:inline-flex items-center justify-center gap-1.5 shadow-md transition-all duration-200 hover:brightness-110 hover:scale-[1.02] active:scale-[0.98]"
             style={{
-              background: "#c2410c",
-              color: "#ffffff",
+              background: isDarkMode ? "rgba(0, 255, 224, 0.08)" : "#c2410c",
+              color: isDarkMode ? "#00ffe0" : "#ffffff",
+              border: isDarkMode ? "1.5px solid rgba(0, 255, 224, 0.75)" : "none",
+              boxShadow: isDarkMode ? "0 0 15px rgba(0, 255, 224, 0.2)" : "none",
               borderRadius: "999px",
               padding: "8px 20px",
               fontWeight: 700,
@@ -218,7 +220,7 @@ export default function Navbar() {
                     isActive ? "active" : ""
                   }`}
                   style={{
-                    color: isActive ? "#c2410c" : "var(--nav-link)",
+                    color: isActive ? "var(--accent)" : "var(--nav-link)",
                     opacity: 1,
                   }}
                 >
@@ -234,10 +236,12 @@ export default function Navbar() {
             onClick={() => setMobileMenuOpen(false)}
             className="w-full inline-flex items-center justify-center gap-2 shadow-md transition-all duration-200"
             style={{
-              background: "#c2410c",
-              color: "#ffffff",
+              background: isDarkMode ? "rgba(0, 255, 224, 0.08)" : "#c2410c",
+              color: isDarkMode ? "#00ffe0" : "#ffffff",
+              border: isDarkMode ? "1.5px solid rgba(0, 255, 224, 0.75)" : "none",
+              boxShadow: isDarkMode ? "0 0 15px rgba(0, 255, 224, 0.2)" : "none",
               borderRadius: "999px",
-              padding: "10px 20px",
+              padding: "8px 20px",
               fontWeight: 700,
               fontSize: "13px",
               letterSpacing: "0.05em",

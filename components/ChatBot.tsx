@@ -3,11 +3,11 @@
 import { useState, useRef, useEffect } from 'react';
 
 const QUICK_ACTIONS = [
-  { label: '⚡ 30-sec Summary', prompt: 'Give me a 30-second summary of R Him Khan' },
+  { label: '⚡ 30-sec Summary', prompt: 'Give me a 30-second summary of R him Khan' },
   { label: '🚀 Projects', prompt: 'Tell me about his projects' },
   { label: '🛠️ Skills', prompt: 'What are his technical skills?' },
   { label: '🎓 Education', prompt: 'What is his educational background?' },
-  { label: '📬 Contact', prompt: 'How can I contact R Him Khan?' },
+  { label: '📬 Contact', prompt: 'How can I contact R him Khan?' },
 ];
 
 interface Message {
@@ -20,7 +20,7 @@ export const ChatBot = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'assistant',
-      content: "Hey! I'm Rex 🤖 — R Him Khan's portfolio assistant. Ask me anything about his skills, projects, or experience!",
+      content: "Hey! I'm Rex 🤖 — R him Khan's portfolio assistant. Ask me anything about his skills, projects, or experience!",
     },
   ]);
   const [input, setInput] = useState('');
@@ -209,7 +209,7 @@ export const ChatBot = () => {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && sendMessage(input)}
-              placeholder="Ask about R Him Khan..."
+              placeholder="Ask about R him Khan..."
               disabled={loading}
               className="flex-1 px-4 py-2 rounded-full text-xs outline-none"
               style={{

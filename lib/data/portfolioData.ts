@@ -83,7 +83,7 @@ export interface StatItem {
 }
 
 export const personalInfo: PersonalInfo = {
-  name: "R Him Khan",
+  name: "R him Khan",
   role: "AI/ML Engineer & Full Stack Developer",
   tagline: "Building intelligent solutions at the intersection of technology and real-world impact.",
   email: "rhim78975730@gmail.com",
@@ -94,7 +94,7 @@ export const personalInfo: PersonalInfo = {
   available: true,
   availableText: "Open to internships and full-time roles",
   quote: "Building intelligent solutions at the intersection of technology and real-world impact.",
-  bio: "Hi, I'm R Him Khan — an aspiring AI/ML Engineer and Full Stack Developer. Currently pursuing B.Tech in AI & ML at Amity University, Gwalior (3rd Year). I've completed 3 internships across AI and Full Stack Development, and built 5 end-to-end projects spanning Computer Vision, NLP, and Machine Learning.",
+  bio: "Hi, I'm R him Khan — an aspiring AI/ML Engineer and Full Stack Developer. Currently pursuing B.Tech in AI & ML at Amity University, Gwalior (3rd Year). I've completed 3 internships across AI and Full Stack Development, and built 5 end-to-end projects spanning Computer Vision, NLP, and Machine Learning.",
   roleBadges: ["AI & ML Engineer", "Full Stack Developer", "Tech Explorer", "Problem Solver"],
 };
 
