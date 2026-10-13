@@ -344,13 +344,6 @@ export const achievementsData: AchievementItem[] = [
     date: "Aug 2026",
   },
   {
-    icon: "🎓",
-    title: "Amity Coding Club",
-    description: "Active member contributing to peer-led coding sessions, problem-solving workshops, and tech seminars.",
-    issuer: "Amity University Gwalior",
-    date: "Ongoing",
-  },
-  {
     icon: "⚡",
     title: "2 Hackathons Participated",
     description: "Collaborated in high-intensity collegiate hackathons building rapid prototypes under strict time constraints.",

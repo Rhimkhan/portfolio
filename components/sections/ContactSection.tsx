@@ -221,7 +221,7 @@ export default function ContactSection() {
                     className="text-sm font-semibold truncate block"
                     style={{ color: "var(--text-primary)" }}
                   >
-                    {personalInfo.email}
+                    {personalInfo.email} ↗
                   </span>
                 </div>
               </a>
