@@ -5,14 +5,15 @@ import { personalInfo } from "@/lib/data/portfolioData";
 
 export default function Footer() {
   const footerLinks = [
-    { label: "Home", href: "#" },
-    { label: "About", href: "#about" },
-    { label: "Projects", href: "#projects" },
-    { label: "Skills", href: "#skills" },
-    { label: "Experience", href: "#experience" },
-    { label: "Certificates", href: "#certificates" },
-    { label: "GitHub Ecosystem", href: "#github" },
-    { label: "Get in Touch", href: "#contact" },
+    { label: "Home", href: "#", isDownload: false },
+    { label: "About", href: "#about", isDownload: false },
+    { label: "Projects", href: "#projects", isDownload: false },
+    { label: "Skills", href: "#skills", isDownload: false },
+    { label: "Experience", href: "#experience", isDownload: false },
+    { label: "Certificates", href: "#certificates", isDownload: false },
+    { label: "GitHub Ecosystem", href: "#github", isDownload: false },
+    { label: "Get in Touch", href: "#contact", isDownload: false },
+    { label: "Download Resume (PDF)", href: "/api/resume", isDownload: true },
   ];
 
   return (
@@ -89,6 +90,11 @@ export default function Footer() {
                 <a
                   key={link.label}
                   href={link.href}
+                  {...(link.isDownload
+                    ? {
+                        download: "Rhim_Khan_Resume.pdf",
+                      }
+                    : {})}
                   className="text-xs font-mono-technical flex items-center gap-1.5 transition-colors group"
                   style={{ color: "var(--text-secondary)" }}
                 >
@@ -98,7 +104,9 @@ export default function Footer() {
                   >
                     →
                   </span>
-                  <span>{link.label}</span>
+                  <span className={link.isDownload ? "font-bold text-[var(--accent)]" : ""}>
+                    {link.label}
+                  </span>
                 </a>
               ))}
             </div>
@@ -175,6 +183,23 @@ export default function Footer() {
                     strokeWidth="2"
                     d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                   />
+                </svg>
+              </a>
+
+              <a
+                href="/api/resume"
+                download="Rhim_Khan_Resume.pdf"
+                aria-label="Download Resume"
+                title="Download Resume (PDF)"
+                className="w-10 h-10 rounded-xl flex items-center justify-center transition-all hover:scale-110"
+                style={{
+                  background: "var(--bg)",
+                  border: "1.5px solid var(--accent)",
+                  color: "var(--accent)",
+                }}
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
               </a>
             </div>

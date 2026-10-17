@@ -143,8 +143,8 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           {/* Resume Download Pill Button */}
           <a
-            href="/resume.pdf"
-            download="RHimKhan_Resume.pdf"
+            href="/api/resume"
+            download="Rhim_Khan_Resume.pdf"
             className="hidden sm:inline-flex items-center justify-center gap-1.5 shadow-md transition-all duration-200 hover:brightness-110 hover:scale-[1.02] active:scale-[0.98]"
             style={{
               background: isDarkMode ? "rgba(0, 255, 224, 0.08)" : "#c2410c",
@@ -231,8 +231,8 @@ export default function Navbar() {
           </div>
 
           <a
-            href="/resume.pdf"
-            download="RHimKhan_Resume.pdf"
+            href="/api/resume"
+            download="Rhim_Khan_Resume.pdf"
             onClick={() => setMobileMenuOpen(false)}
             className="w-full inline-flex items-center justify-center gap-2 shadow-md transition-all duration-200"
             style={{

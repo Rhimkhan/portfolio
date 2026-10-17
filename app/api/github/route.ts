@@ -12,6 +12,7 @@ export async function GET() {
       next: { revalidate: 3600 },
     });
 
+    
     if (!res.ok) {
       // Fallback data if GitHub rate limits
       return NextResponse.json({

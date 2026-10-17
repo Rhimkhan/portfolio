@@ -12,6 +12,7 @@ export interface PersonalInfo {
   bio: string;
   quote: string;
   roleBadges: string[];
+  resume: string;
 }
 
 export interface EducationItem {
@@ -96,6 +97,7 @@ export const personalInfo: PersonalInfo = {
   quote: "Building intelligent solutions at the intersection of technology and real-world impact.",
   bio: "Hi, I'm R him Khan — an aspiring AI/ML Engineer and Full Stack Developer. Currently pursuing B.Tech in AI & ML at Amity University, Gwalior (3rd Year). I've completed 3 internships across AI and Full Stack Development, and built 5 end-to-end projects spanning Computer Vision, NLP, and Machine Learning.",
   roleBadges: ["AI & ML Engineer", "Full Stack Developer", "Tech Explorer", "Problem Solver"],
+  resume: "/api/resume",
 };
 
 export const educationData: EducationItem[] = [

@@ -330,6 +330,49 @@ export default function ContactSection() {
                   </span>
                 </div>
               </div>
+
+              <a
+                href={personalInfo.resume}
+                download="Rhim_Khan_Resume.pdf"
+                className="portfolio-card rounded-xl p-4 flex items-center justify-between gap-4 transition-all group hover:border-[var(--accent)] hover:scale-[1.01]"
+                style={{
+                  background: "var(--card-bg)",
+                  border: "1.5px solid var(--accent)",
+                  boxShadow: "var(--shadow)",
+                }}
+              >
+                <div className="flex items-center gap-4 min-w-0">
+                  <div
+                    className="w-10 h-10 rounded-lg flex items-center justify-center text-lg shrink-0 group-hover:scale-110 transition-transform"
+                    style={{
+                      background: "var(--accent)",
+                      color: "#ffffff",
+                    }}
+                  >
+                    📄
+                  </div>
+                  <div className="min-w-0">
+                    <span
+                      className="font-mono-technical text-[11px] uppercase tracking-wider block font-semibold"
+                      style={{ color: "var(--accent)" }}
+                    >
+                      Official Curriculum Vitae
+                    </span>
+                    <span
+                      className="text-sm font-bold truncate block"
+                      style={{ color: "var(--text-primary)" }}
+                    >
+                      Download Resume (PDF)
+                    </span>
+                  </div>
+                </div>
+                <span
+                  className="font-mono-technical text-xs font-bold px-3 py-1.5 rounded-full border border-[var(--accent)] bg-[var(--accent)]/10 group-hover:bg-[var(--accent)] group-hover:text-white transition-all shrink-0"
+                  style={{ color: "var(--accent)" }}
+                >
+                  ↓ Download
+                </span>
+              </a>
             </div>
           </div>
 
