@@ -56,7 +56,7 @@ export default function SkillsSection() {
               className="font-mono-technical text-xs uppercase tracking-wider"
               style={{ color: "var(--text-secondary)" }}
             >
-              // Core Stack Interactive Cloud
+              {"// Core Stack Interactive Cloud"}
             </span>
           </div>
 

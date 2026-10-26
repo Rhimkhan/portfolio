@@ -5,7 +5,7 @@ import { personalInfo } from "@/lib/data/portfolioData";
 
 export default function Footer() {
   const footerLinks = [
-    { label: "Home", href: "#", isDownload: false },
+    { label: "Home", href: "#home", isDownload: false },
     { label: "About", href: "#about", isDownload: false },
     { label: "Projects", href: "#projects", isDownload: false },
     { label: "Skills", href: "#skills", isDownload: false },
@@ -13,7 +13,7 @@ export default function Footer() {
     { label: "Certificates", href: "#certificates", isDownload: false },
     { label: "GitHub Ecosystem", href: "#github", isDownload: false },
     { label: "Get in Touch", href: "#contact", isDownload: false },
-    { label: "Download Resume (PDF)", href: "/api/resume", isDownload: true },
+    { label: "Download Resume (PDF)", href: "/resume.pdf", isDownload: true },
   ];
 
   return (
@@ -39,7 +39,7 @@ export default function Footer() {
               className="font-display text-3xl font-extrabold tracking-tight"
               style={{ color: "var(--text-primary)" }}
             >
-              R HIM KHAN <span style={{ color: "var(--accent)" }}>.</span>
+              RHIM KHAN <span style={{ color: "var(--accent)" }}>.</span>
             </h2>
             <p
               className="font-mono-technical text-xs uppercase tracking-wider font-semibold"
@@ -187,7 +187,7 @@ export default function Footer() {
               </a>
 
               <a
-                href="/api/resume"
+                href="/resume.pdf"
                 download="Rhim_Khan_Resume.pdf"
                 aria-label="Download Resume"
                 title="Download Resume (PDF)"
@@ -221,7 +221,7 @@ export default function Footer() {
             color: "var(--text-secondary)",
           }}
         >
-          <p>© 2026 R him Khan. All rights reserved.</p>
+          <p>© 2026 Rhim Khan. All rights reserved.</p>
           <p>Built with Next.js + Tailwind | Made in India 🇮🇳</p>
         </div>
       </div>

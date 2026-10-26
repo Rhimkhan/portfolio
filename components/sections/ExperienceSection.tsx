@@ -1,12 +1,9 @@
 "use client";
 
 import React from "react";
-import { experienceData } from "@/lib/data/portfolioData";
+import { experienceData } from "@/lib/data/offerLetters";
 
 export default function ExperienceSection() {
-  const handleOpenPdf = (url: string) => {
-    window.open(url, "_blank", "noopener,noreferrer");
-  };
 
   return (
     <section
@@ -163,9 +160,11 @@ export default function ExperienceSection() {
                     style={{ borderColor: "var(--border)" }}
                   >
                     {exp.documents.map((doc, dIdx) => (
-                      <button
+                      <a
                         key={dIdx}
-                        onClick={() => handleOpenPdf(doc.url)}
+                        href={doc.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border text-xs font-mono-technical font-semibold shadow-sm hover:scale-[1.02] active:scale-[0.98] transition-all"
                         style={{
                           background: "var(--bg)",
@@ -175,7 +174,7 @@ export default function ExperienceSection() {
                       >
                         <span>{doc.label}</span>
                         <span className="text-[10px]">↗</span>
-                      </button>
+                      </a>
                     ))}
                   </div>
                 )}

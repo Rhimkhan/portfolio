@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { certificatesData } from "@/lib/data/portfolioData";
+import { certificatesData } from "@/lib/data/certificates";
 
 export default function CertificatesSection() {
   const [selectedFilter, setSelectedFilter] = useState<string>("All");
@@ -10,7 +10,7 @@ export default function CertificatesSection() {
 
   const filteredCertificates = certificatesData.filter((cert) => {
     if (selectedFilter === "All") return true;
-    if (selectedFilter === "AI & ML") return cert.category === "AI";
+    if (selectedFilter === "AI & ML") return cert.category === "AI & ML";
     if (selectedFilter === "Data Science") return cert.category === "Data Science";
     if (selectedFilter === "Internship") return cert.category === "Internship";
     return true;
@@ -186,8 +186,10 @@ export default function CertificatesSection() {
                 className="pt-4 border-t"
                 style={{ borderColor: "var(--border)" }}
               >
-                <button
-                  onClick={() => handleOpenPdf(cert.pdf)}
+                <a
+                  href={cert.fileUrl || cert.pdf}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-full inline-flex items-center justify-center gap-2 py-2.5 rounded-xl border text-xs font-mono-technical font-semibold shadow-sm hover:scale-[1.02] active:scale-[0.98] transition-all"
                   style={{
                     background: "var(--bg)",
@@ -197,7 +199,7 @@ export default function CertificatesSection() {
                 >
                   <span>📄 View Certificate</span>
                   <span className="text-[10px]">↗</span>
-                </button>
+                </a>
               </div>
             </div>
           ))}

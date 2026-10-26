@@ -81,7 +81,7 @@ export default function AboutSection() {
             {/* Resume Download Action */}
             <div className="pt-2">
               <a
-                href={personalInfo.resume}
+                href="/resume.pdf"
                 download="Rhim_Khan_Resume.pdf"
                 className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full font-mono-technical text-xs font-bold uppercase tracking-wider transition-all duration-200 hover:scale-105 active:scale-95 shadow-md"
                 style={{

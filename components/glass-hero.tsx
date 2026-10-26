@@ -216,7 +216,7 @@ function LightGlassHero() {
         />
       </div>
 
-      {/* LAYER 4: Headline and Copy (R Him Khan) */}
+      {/* LAYER 4: Headline and Copy (Rhim Khan) */}
       <div className="relative z-[3] w-full h-full pointer-events-none">
         {/* Most Recent Badge */}
         <div
@@ -281,7 +281,7 @@ function LightGlassHero() {
               fontWeight: 700,
             }}
           >
-            <span style={{ color: "var(--text-primary)", fontWeight: 700 }}>R him</span>
+            <span style={{ color: "var(--text-primary)", fontWeight: 700 }}>Rhim</span>
             <br />
             <span style={{ color: "var(--accent)", fontWeight: 700 }}>Khan.</span>
           </h1>
@@ -314,7 +314,7 @@ function LightGlassHero() {
               View Projects
             </a>
             <a
-              href="/api/resume"
+              href="/resume.pdf"
               download="Rhim_Khan_Resume.pdf"
               className="inline-flex items-center justify-center gap-2 min-h-[42px] px-6 rounded-full text-xs font-mono-technical tracking-wider uppercase font-bold border border-[var(--accent)] bg-[var(--card-bg)]/90 backdrop-blur-sm transition-all hover:bg-[var(--accent)] hover:text-white hover:scale-105 active:scale-95 shadow-sm"
               style={{

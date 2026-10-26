@@ -67,6 +67,24 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith("#")) {
+      e.preventDefault();
+      const targetId = href.slice(1);
+      const element = document.getElementById(targetId);
+      if (element) {
+        const navHeight = 70;
+        const targetPosition = element.getBoundingClientRect().top + window.pageYOffset - navHeight;
+        window.scrollTo({
+          top: targetPosition,
+          behavior: "smooth",
+        });
+        setActiveSection(targetId);
+        setMobileMenuOpen(false);
+      }
+    }
+  };
+
   return (
     <nav
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b"
@@ -86,8 +104,9 @@ export default function Navbar() {
         {/* Brand Monogram + Name */}
         <a
           href="#home"
+          onClick={(e) => handleNavClick(e, "#home")}
           className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] rounded-lg p-1"
-          aria-label="R him Khan - Home"
+          aria-label="Rhim Khan - Home"
         >
           <div className="w-8 h-8 rounded-full border border-[var(--monogram-border)] flex items-center justify-center bg-[var(--monogram-bg)] backdrop-blur-sm group-hover:border-[var(--accent)] transition-colors">
             <svg
@@ -109,7 +128,7 @@ export default function Navbar() {
           </div>
           <span className="font-mono-technical text-sm tracking-wider">
             <span className="font-normal" style={{ color: "var(--text-primary)" }}>
-              R him{" "}
+              Rhim{" "}
             </span>
             <span className="font-bold" style={{ color: "var(--accent)" }}>
               Khan
@@ -125,6 +144,7 @@ export default function Navbar() {
               <a
                 key={item.label}
                 href={item.href}
+                onClick={(e) => handleNavClick(e, item.href)}
                 className={`nav-link font-mono-technical text-[13px] font-bold tracking-[0.12em] uppercase min-h-[38px] flex items-center px-1 transition-colors duration-200 ${
                   isActive ? "active" : ""
                 }`}
@@ -143,7 +163,7 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           {/* Resume Download Pill Button */}
           <a
-            href="/api/resume"
+            href="/resume.pdf"
             download="Rhim_Khan_Resume.pdf"
             className="hidden sm:inline-flex items-center justify-center gap-1.5 shadow-md transition-all duration-200 hover:brightness-110 hover:scale-[1.02] active:scale-[0.98]"
             style={{
@@ -215,7 +235,7 @@ export default function Navbar() {
                 <a
                   key={item.label}
                   href={item.href}
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={(e) => handleNavClick(e, item.href)}
                   className={`nav-link font-mono-technical text-[13px] font-bold tracking-[0.12em] uppercase py-2 border-b border-[var(--border)] transition-colors duration-200 ${
                     isActive ? "active" : ""
                   }`}
@@ -231,7 +251,7 @@ export default function Navbar() {
           </div>
 
           <a
-            href="/api/resume"
+            href="/resume.pdf"
             download="Rhim_Khan_Resume.pdf"
             onClick={() => setMobileMenuOpen(false)}
             className="w-full inline-flex items-center justify-center gap-2 shadow-md transition-all duration-200"

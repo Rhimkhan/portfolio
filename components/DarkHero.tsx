@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import Navbar from "./Navbar";
 
 export default function DarkHero() {
@@ -25,9 +26,12 @@ export default function DarkHero() {
 
               {/* Inner Circular Photo */}
               <div className="w-full h-full rounded-full overflow-hidden border border-cyan-400/20 shadow-2xl relative bg-[#0a1120]">
-                <img
+                <Image
                   src="/images/user-dark-portrait.jpg"
-                  alt="R him Khan"
+                  alt="Rhim Khan - AI/ML Engineer & Full Stack Developer"
+                  width={360}
+                  height={360}
+                  priority
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                 />
               </div>
@@ -53,7 +57,7 @@ export default function DarkHero() {
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold tracking-tight text-white leading-[1.1]">
             Hi, I&apos;m{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-500 font-bold">
-              R him Khan
+              Rhim Khan
             </span>
           </h1>
 
@@ -120,7 +124,7 @@ export default function DarkHero() {
               <span>→</span>
             </a>
             <a
-              href="/api/resume"
+              href="/resume.pdf"
               download="Rhim_Khan_Resume.pdf"
               className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-white/15 bg-white/[0.05] hover:bg-white/10 text-white font-semibold text-xs font-mono-technical tracking-wider uppercase transition-all hover:scale-105 active:scale-95"
             >

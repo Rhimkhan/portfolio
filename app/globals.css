@@ -71,18 +71,18 @@ body {
   overflow-x: hidden;
   background: var(--bg);
   color: var(--text-primary);
-  font-family: 'Albert Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--font-albert-sans), 'Albert Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background 0.4s ease, color 0.4s ease;
 }
 
 .font-mono-technical {
-  font-family: 'Fragment Mono', monospace, ui-monospace, SFMono-Regular;
+  font-family: var(--font-fragment-mono), 'Fragment Mono', monospace, ui-monospace, SFMono-Regular;
 }
 
 .font-display {
-  font-family: 'Albert Sans', sans-serif;
+  font-family: var(--font-albert-sans), 'Albert Sans', sans-serif;
 }
 
 /* Layer 1: Base Portrait */

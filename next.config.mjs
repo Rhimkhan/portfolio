@@ -1,12 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  async rewrites() {
-    return [
+  images: {
+    remotePatterns: [
       {
-        source: "/resume.pdf",
-        destination: "/api/resume",
+        protocol: "https",
+        hostname: "avatars.githubusercontent.com",
       },
-    ];
+    ],
   },
 };
 

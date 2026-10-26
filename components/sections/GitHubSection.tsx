@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 import dynamic from "next/dynamic";
 import { useTheme } from "@/lib/context/ThemeContext";
 
@@ -117,10 +118,12 @@ export default function GitHubSection() {
               }}
             >
               {stats?.avatar_url ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
+                <Image
                   src={stats.avatar_url}
-                  alt="Rhimkhan GitHub Avatar"
+                  alt="Rhim Khan GitHub Avatar"
+                  width={64}
+                  height={64}
+                  unoptimized
                   className="w-full h-full object-cover"
                 />
               ) : (
@@ -138,7 +141,7 @@ export default function GitHubSection() {
                 className="font-display text-xl font-bold truncate"
                 style={{ color: "var(--text-primary)" }}
               >
-                R him Khan
+                Rhim Khan
               </h3>
               <a
                 href="https://github.com/Rhimkhan"

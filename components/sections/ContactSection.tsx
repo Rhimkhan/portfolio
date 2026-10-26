@@ -24,21 +24,71 @@ export default function ContactSection() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
     setStatusMessage(null);
 
+    // Client-side validation
+    const trimmedName = formData.name.trim();
+    const trimmedEmail = formData.email.trim();
+    const trimmedMessage = formData.message.trim();
+
+    if (!trimmedName) {
+      setStatusMessage({
+        type: "error",
+        text: "Please enter your full name.",
+      });
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!trimmedEmail || !emailRegex.test(trimmedEmail)) {
+      setStatusMessage({
+        type: "error",
+        text: "Please enter a valid email address.",
+      });
+      return;
+    }
+
+    if (!trimmedMessage) {
+      setStatusMessage({
+        type: "error",
+        text: "Please write a message before submitting.",
+      });
+      return;
+    }
+
+    const web3formsKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
+    if (!web3formsKey || web3formsKey === "your_web3forms_key_here") {
+      setStatusMessage({
+        type: "error",
+        text: "Web3Forms access key is missing. Please set NEXT_PUBLIC_WEB3FORMS_KEY in .env.local.",
+      });
+      return;
+    }
+
+    setLoading(true);
+
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: web3formsKey,
+          name: trimmedName,
+          email: trimmedEmail,
+          subject: formData.subject.trim() || `Portfolio Contact from ${trimmedName}`,
+          message: trimmedMessage,
+          from_name: `${trimmedName} (Portfolio)`,
+        }),
       });
 
       const data = await res.json();
       if (res.ok && data.success) {
         setStatusMessage({
           type: "success",
-          text: data.message || "Thank you! Your message was sent successfully.",
+          text: "Thank you! Your message was sent successfully. I'll get back to you shortly.",
         });
         setFormData({ name: "", email: "", subject: "", message: "" });
       } else {
@@ -50,7 +100,7 @@ export default function ContactSection() {
     } catch {
       setStatusMessage({
         type: "error",
-        text: "Network error occurred. Please try again or email directly.",
+        text: "Network error occurred. Please try again or reach out directly to rhim78975730@gmail.com.",
       });
     } finally {
       setLoading(false);
@@ -332,7 +382,7 @@ export default function ContactSection() {
               </div>
 
               <a
-                href={personalInfo.resume}
+                href="/resume.pdf"
                 download="Rhim_Khan_Resume.pdf"
                 className="portfolio-card rounded-xl p-4 flex items-center justify-between gap-4 transition-all group hover:border-[var(--accent)] hover:scale-[1.01]"
                 style={{

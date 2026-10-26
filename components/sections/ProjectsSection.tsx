@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { projectsData } from "@/lib/data/portfolioData";
+import { projectsData } from "@/lib/data/projects";
 
 export default function ProjectsSection() {
   return (
@@ -140,10 +140,10 @@ export default function ProjectsSection() {
                   <span>Code ↗</span>
                 </a>
 
-                {/* Live Demo or Disabled Tooltip */}
-                {project.live ? (
+                {/* Live Demo Link (Hidden if no liveUrl) */}
+                {(project.liveUrl || project.live) && (
                   <a
-                    href={project.live}
+                    href={(project.liveUrl || project.live) as string}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex-1 inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl text-xs font-mono-technical font-semibold hover:opacity-90 transition-all shadow-sm text-white"
@@ -153,30 +153,6 @@ export default function ProjectsSection() {
                   >
                     <span>Live Demo ↗</span>
                   </a>
-                ) : (
-                  <div className="relative group/tip flex-1">
-                    <button
-                      disabled
-                      className="w-full inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl border text-xs font-mono-technical font-semibold opacity-50 cursor-not-allowed"
-                      style={{
-                        background: "var(--bg)",
-                        borderColor: "var(--border)",
-                        color: "var(--text-secondary)",
-                      }}
-                    >
-                      <span>Live Demo</span>
-                    </button>
-                    <div
-                      className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover/tip:block text-[11px] font-mono-technical px-2.5 py-1 rounded shadow-lg whitespace-nowrap z-10 pointer-events-none"
-                      style={{
-                        background: "var(--card-bg)",
-                        color: "var(--text-primary)",
-                        border: "1px solid var(--border)",
-                      }}
-                    >
-                      Coming Soon
-                    </div>
-                  </div>
                 )}
               </div>
             </div>
